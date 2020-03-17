@@ -19,7 +19,7 @@ export default () => {
   return (
     <div>
       {cards.map((c, index) => (
-        <Card key={c.country} {...c} index={index} />
+        <Card key={c.country} {...c} index={index + 1} />
       ))}
     </div>
   )
