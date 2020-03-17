@@ -68,6 +68,10 @@ span:nth-child(1) {
   white-space: nowrap;
 }
 
+.sub-title {
+  font-size: 14px;
+}
+
 .flag {
   margin-right: 10px;
   vertical-align: baseline;
