@@ -73,6 +73,16 @@ span:nth-child(1) {
   vertical-align: baseline;
 }
 .flagHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.main-title {
+  font-size: 48px;
+  text-transform: uppercase;
+  padding: 30px;
+  font-weight: bold;
 }
