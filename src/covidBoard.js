@@ -1,9 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Card from './card'
 import useTimer from './useTimer'
+import Header from './header'
 
 export default () => {
   const [cards, setCards] = useState([])
+  const [search, setSearch] = useState('')
+  const [sort, setSort] = useState('active')
+
+  const options = [
+    'active',
+    'cases',
+    'critical',
+    'deaths',
+    'todayCases',
+    'todayDeaths'
+  ]
+
   const getData = () =>
     fetch('https://coronavirus-19-api.herokuapp.com/countries/')
       .then(res => res.json())
@@ -20,12 +33,28 @@ export default () => {
     getData()
   }, [timer])
 
+  const cardFiltered = search.length
+    ? cards.filter(item => item.country.match(new RegExp(search, 'i')))
+    : cards
+
   return (
     <div>
-      <div className="main-title"> Covid-19 Live Dashboard</div>
-      {cards.map((c, index) => (
-        <Card key={c.country} {...c} index={index + 1} />
-      ))}
+      <Header
+        onChangeSearch={setSearch}
+        search={search}
+        sort={sort}
+        onChangeSort={setSort}
+        options={options}
+      />
+      {cardFiltered
+        .sort(function(a, b) {
+          if (a[sort] > b[sort]) return -1
+          if (b[sort] > a[sort]) return 1
+          return 0
+        })
+        .map((c, index) => (
+          <Card key={c.country} {...c} index={index + 1} />
+        ))}
     </div>
   )
 }

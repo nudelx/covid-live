@@ -23,7 +23,6 @@ export default ({
       .then(data => data[0] && setFlag(data[0].flag))
   }, [country])
 
-  console.log('country', country)
   return (
     <div className="card">
       <div className="title">
