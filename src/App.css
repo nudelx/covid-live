@@ -79,3 +79,10 @@ span:nth-child(1) {
   white-space: nowrap;
   overflow: hidden;
 }
+
+.main-title {
+  font-size: 48px;
+  text-transform: uppercase;
+  padding: 30px;
+  font-weight: bold;
+}
