@@ -22,7 +22,7 @@ export default () => {
 
   return (
     <div>
-      <div> Covid-19 Live Dashboard</div>
+      <div className="main-title"> Covid-19 Live Dashboard</div>
       {cards.map((c, index) => (
         <Card key={c.country} {...c} index={index + 1} />
       ))}
