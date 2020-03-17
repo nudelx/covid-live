@@ -7,7 +7,10 @@ export default ({ onChangeSearch, search, options, sort, onChangeSort }) => {
   console.log('sort', sort)
   return (
     <div className="header">
-      <div className="main-title"> Covid-19 Live Dashboard</div>
+      <div className="main-title">
+        <div>Covid-19 Live Dashboard</div>
+        <div className="sub-title">by Nudelman Alex</div>
+      </div>
 
       <div className="tools">
         <div className="search">
