@@ -88,11 +88,9 @@ span:nth-child(1) {
 }
 
 .header {
-  border: 1px solid red;
 }
 
 .tools {
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
