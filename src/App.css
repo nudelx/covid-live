@@ -65,9 +65,14 @@ span:nth-child(1) {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  white-space: nowrap;
 }
 
 .flag {
   margin-right: 10px;
   vertical-align: baseline;
+}
+.flagHolder {
+  white-space: nowrap;
+  overflow: hidden;
 }
