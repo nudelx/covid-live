@@ -22,7 +22,7 @@ export default ({
     <div className="card">
       <div className="title">
         <div>{index}</div>
-        <div>
+        <div className="flagHolder">
           <div className="flag">
             <img width="30" height="25" alt="country" src={flag} />
           </div>
