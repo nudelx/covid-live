@@ -70,6 +70,13 @@ span:nth-child(1) {
 
 .sub-title {
   font-size: 14px;
+  color: #adbabc;
+}
+
+.sub-title-2 {
+  padding: 5px;
+  font-size: 10px;
+  color: #adbabc;
 }
 
 .flag {
@@ -96,8 +103,8 @@ span:nth-child(1) {
 .header a:active,
 .header a:link,
 .header a:hover {
-  color: #adbabc;
   text-decoration: none;
+  color: #adbabc;
 }
 
 .tools {
@@ -124,9 +131,4 @@ span:nth-child(1) {
   font-size: 16px;
   font-weight: 600;
   border-radius: 3px;
-}
-
-.sub-title-2 {
-  padding: 5px;
-  font-size: 10px;
 }
