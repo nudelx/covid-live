@@ -9,9 +9,9 @@ export default ({ onChangeSearch, search, options, sort, onChangeSort }) => {
     <div className="header">
       <div className="main-title">
         <div>Covid-19 Live Dashboard</div>
-        <div className="sub-title">by Nudelman Alex</div>
+        <div className="sub-title">by <a href="https://github.com/nudelx">Nudelman Alex</a></div>
         <div className="sub-title-2">
-          DataSource: https://coronavirus-19-api.herokuapp.com
+          DataSource: <a href="https://www.worldometers.info">www.worldometers.info</a> with <a href="https://github.com/javieraviles/covidAPI">API</a> by <a href="https://github.com/javieraviles">Javier Aviles</a>
         </div>
       </div>
 
