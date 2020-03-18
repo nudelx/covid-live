@@ -55,6 +55,10 @@ export default ({
             <span>{deaths}</span>
           </li>
           <li>
+            <span>Recovered: </span>
+            <span>{recovered}</span>
+          </li>
+          <li>
             <span>TodayCases:</span>
             <span>{todayCases}</span>
           </li>
