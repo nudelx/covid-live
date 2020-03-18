@@ -119,3 +119,8 @@ span:nth-child(1) {
   font-weight: 600;
   border-radius: 3px;
 }
+
+.sub-title-2 {
+  padding: 5px;
+  font-size: 10px;
+}
