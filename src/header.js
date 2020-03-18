@@ -10,6 +10,9 @@ export default ({ onChangeSearch, search, options, sort, onChangeSort }) => {
       <div className="main-title">
         <div>Covid-19 Live Dashboard</div>
         <div className="sub-title">by Nudelman Alex</div>
+        <div className="sub-title-2">
+          DataSource: https://coronavirus-19-api.herokuapp.com
+        </div>
       </div>
 
       <div className="tools">
