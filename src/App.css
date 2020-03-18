@@ -91,7 +91,13 @@ span:nth-child(1) {
   font-weight: bold;
 }
 
-.header {
+.header a,
+.header a:visited,
+.header a:active,
+.header a:link,
+.header a:hover {
+  color: #adbabc;
+  text-decoration: none;
 }
 
 .tools {
