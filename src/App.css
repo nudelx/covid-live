@@ -155,3 +155,9 @@ span:nth-child(1) {
   font-size: 12px;
   padding: 20px;
 }
+
+.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
