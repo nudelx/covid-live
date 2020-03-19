@@ -1,6 +1,5 @@
 import React from 'react'
 import Card from './card'
-
 import Header from './header'
 import Chart from './chart'
 import useCovidHook from './useCovidHook'
