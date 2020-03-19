@@ -3,7 +3,16 @@ const capitalize = s => {
   if (typeof s !== 'string') return ''
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
-export default ({ onChangeSearch, search, options, sort, onChangeSort }) => {
+export default ({
+  onChangeSearch,
+  search,
+  options,
+  sort,
+  onChangeSort,
+  setShow,
+  show
+}) => {
+  console.log(setShow)
   return (
     <div className="header">
       <div className="main-title">
@@ -43,6 +52,12 @@ export default ({ onChangeSearch, search, options, sort, onChangeSort }) => {
             ))}
           </select>
         </div>
+        <div
+          onClick={() => setShow(show === 'grid' ? 'graph' : 'grid')}
+          className={`toggleButton ${
+            show === 'grid' ? 'chart-icon' : 'grid-icon'
+          }`}
+        ></div>
       </div>
     </div>
   )
