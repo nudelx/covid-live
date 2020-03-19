@@ -27,6 +27,13 @@ export default ({
         </div>
       </div>
 
+      <div
+        onClick={() => setShow(show === 'grid' ? 'graph' : 'grid')}
+        className={`toggleButton ${
+          show === 'grid' ? 'chart-icon' : 'grid-icon'
+        }`}
+      ></div>
+
       <div className="tools">
         <div className="search">
           <label for="search">Search</label>
@@ -51,12 +58,6 @@ export default ({
             ))}
           </select>
         </div>
-        <div
-          onClick={() => setShow(show === 'grid' ? 'graph' : 'grid')}
-          className={`toggleButton ${
-            show === 'grid' ? 'chart-icon' : 'grid-icon'
-          }`}
-        ></div>
       </div>
     </div>
   )
