@@ -12,7 +12,6 @@ export default ({
   setShow,
   show
 }) => {
-  console.log(setShow)
   return (
     <div className="header">
       <div className="main-title">
