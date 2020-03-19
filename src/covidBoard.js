@@ -38,6 +38,12 @@ export default () => {
   const cardFiltered = search.length
     ? cards.filter(item => item.country.match(new RegExp(search, 'i')))
     : cards
+
+  const sorted = cardFiltered.sort(function(a, b) {
+    if (a[sort] > b[sort]) return -1
+    if (b[sort] > a[sort]) return 1
+    return 0
+  })
   return (
     <div>
       <Header
@@ -51,17 +57,11 @@ export default () => {
       />
       <div>
         {show === 'grid' ? (
-          cardFiltered
-            .sort(function(a, b) {
-              if (a[sort] > b[sort]) return -1
-              if (b[sort] > a[sort]) return 1
-              return 0
-            })
-            .map((c, index) => (
-              <Card key={c.country} {...c} index={index + 1} />
-            ))
+          sorted.map((c, index) => (
+            <Card key={c.country} {...c} index={index + 1} />
+          ))
         ) : (
-          <Chart data={cardFiltered} />
+          <Chart data={sorted} />
         )}
       </div>
     </div>
