@@ -154,6 +154,7 @@ span:nth-child(1) {
   overflow-x: scroll;
   font-size: 12px;
   padding: 20px;
+  max-width: calc(100vw * 0.9);
 }
 
 .sort {
