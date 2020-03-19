@@ -9,6 +9,11 @@ export default () => {
   const [search, setSearch] = useState('')
   const [sort, setSort] = useState('active')
   const [show, setShow] = useState('grid')
+  const timer = useTimer(14400000) // 4 hours
+
+  useEffect(() => {
+    getData()
+  }, [timer])
 
   const options = [
     'active',
@@ -29,11 +34,6 @@ export default () => {
           })
         )
       )
-  const timer = useTimer(14400000) // 4 hours
-
-  useEffect(() => {
-    getData()
-  }, [timer])
 
   const cardFiltered = search.length
     ? cards.filter(item => item.country.match(new RegExp(search, 'i')))
