@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { options, capitalize } from './options'
 
-export default ({
-  active,
-  cases,
-  country,
-  critical,
-  deaths,
-  recovered,
-  todayCases,
-  todayDeaths,
-  index
-}) => {
+export default props => {
+  const { country, index } = props
   const [flag, setFlag] = useState('#')
 
   useEffect(() => {
@@ -38,34 +30,12 @@ export default ({
       </div>
       <div className="body">
         <ul>
-          <li>
-            <span>Active: </span>
-            <span>{active}</span>
-          </li>
-          <li>
-            <span>Cases: </span>
-            <span>{cases}</span>
-          </li>
-          <li>
-            <span>Critical: </span>
-            <span>{critical}</span>
-          </li>
-          <li>
-            <span>Deaths: </span>
-            <span>{deaths}</span>
-          </li>
-          <li>
-            <span>Recovered: </span>
-            <span>{recovered}</span>
-          </li>
-          <li>
-            <span>TodayCases:</span>
-            <span>{todayCases}</span>
-          </li>
-          <li>
-            <span>TodayDeaths:</span>
-            <span>{todayDeaths}</span>
-          </li>
+          {options.map(o => (
+            <li key={o}>
+              <span>{`${capitalize(o)}:`} </span>
+              <span>{props[o]}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

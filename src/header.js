@@ -1,12 +1,9 @@
 import React from 'react'
-const capitalize = s => {
-  if (typeof s !== 'string') return ''
-  return s.charAt(0).toUpperCase() + s.slice(1)
-}
+import { options, capitalize } from './options'
+
 export default ({
   onChangeSearch,
   search,
-  options,
   sort,
   onChangeSort,
   setShow,
@@ -36,7 +33,7 @@ export default ({
 
       <div className="tools">
         <div className="search">
-          <label for="search">Search</label>
+          <label htmlFor="search">Search</label>
           <input
             placeholder="..."
             id="search"
@@ -49,7 +46,7 @@ export default ({
           />
         </div>
         <div className="sort">
-          <label for="sort">Sort</label>
+          <label htmlFor="sort">Sort</label>
           <select id="sort" onChange={e => onChangeSort(e.target.value)}>
             {options.map(o => (
               <option key={o} value={o}>

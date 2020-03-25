@@ -12,8 +12,7 @@ export default () => {
     setSort,
     show,
     setShow,
-    sortedCards,
-    options
+    sortedCards
   } = useCovidHook()
 
   return (
@@ -23,7 +22,6 @@ export default () => {
         search={search}
         sort={sort}
         onChangeSort={setSort}
-        options={options}
         setShow={setShow}
         show={show}
       />
