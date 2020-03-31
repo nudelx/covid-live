@@ -31,7 +31,7 @@ export default () => {
             <Card key={c.country} {...c} index={index + 1} />
           ))
         ) : (
-          <Chart data={sortedCards} />
+          <Chart data={sortedCards} sortedKey={sort} />
         )}
       </div>
     </div>
