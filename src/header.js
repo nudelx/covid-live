@@ -1,12 +1,10 @@
 import React from 'react'
-const capitalize = s => {
-  if (typeof s !== 'string') return ''
-  return s.charAt(0).toUpperCase() + s.slice(1)
-}
+import { options, capitalize } from './options'
+import Title from './title'
+
 export default ({
   onChangeSearch,
   search,
-  options,
   sort,
   onChangeSort,
   setShow,
@@ -14,19 +12,7 @@ export default ({
 }) => {
   return (
     <div className="header">
-      <div className="main-title">
-        <div>Covid-19 Live Dashboard</div>
-        <div className="sub-title">
-          by <a href="https://github.com/nudelx">Nudelman Alex</a>
-        </div>
-        <div className="sub-title-2">
-          DataSource:{' '}
-          <a href="https://www.worldometers.info">www.worldometers.info</a> with{' '}
-          <a href="https://github.com/javieraviles/covidAPI">API</a> by{' '}
-          <a href="https://github.com/javieraviles">Javier Aviles</a>
-        </div>
-      </div>
-
+      <Title />
       <div
         onClick={() => setShow(show === 'grid' ? 'graph' : 'grid')}
         className={`toggleButton ${
@@ -36,7 +22,7 @@ export default ({
 
       <div className="tools">
         <div className="search">
-          <label for="search">Search</label>
+          <label htmlFor="search">Search</label>
           <input
             placeholder="..."
             id="search"
@@ -49,7 +35,7 @@ export default ({
           />
         </div>
         <div className="sort">
-          <label for="sort">Sort</label>
+          <label htmlFor="sort">Sort</label>
           <select id="sort" onChange={e => onChangeSort(e.target.value)}>
             {options.map(o => (
               <option key={o} value={o}>

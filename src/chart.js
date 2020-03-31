@@ -7,10 +7,29 @@ import {
   YAxis,
   ComposedChart,
   Tooltip,
-  Legend
+  Legend,
+  LabelList
 } from 'recharts'
+const renderCustomizedLabel = props => {
+  const { x, y, width, value } = props
+  const radius = 10
+  const offSet = 25
 
-export default ({ data }) => {
+  return (
+    <g>
+      <text
+        x={x + width + offSet}
+        y={y + radius}
+        fill="#ccc"
+        textAnchor="middle"
+        dominantBaseline="middle"
+      >
+        {value}
+      </text>
+    </g>
+  )
+}
+export default ({ data, sortedKey }) => {
   return (
     <div className="chart">
       <ComposedChart
@@ -37,7 +56,9 @@ export default ({ data }) => {
           fill="#e74c3c"
           stroke="#c0392b"
         />
-        <Bar dataKey="active" barSize={100} fill="#2980b9" />
+        <Bar dataKey={sortedKey} barSize={100} fill="#2980b9">
+          <LabelList dataKey={sortedKey} content={renderCustomizedLabel} />
+        </Bar>
         <Line type="monotone" dataKey="cases" stroke="#27ae60" />
       </ComposedChart>
     </div>

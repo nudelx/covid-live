@@ -7,15 +7,6 @@ export default () => {
   const [show, setShow] = useState('grid')
   const timer = useTimer(3600000) // 1 hours
 
-  const options = [
-    'active',
-    'cases',
-    'critical',
-    'deaths',
-    'todayCases',
-    'todayDeaths'
-  ]
-
   useEffect(() => {
     getData()
   }, [timer])
@@ -52,7 +43,6 @@ export default () => {
     setSort,
     show,
     setShow,
-    options,
     sortedCards: prepareData({ cards, search, sort })
   }
 }

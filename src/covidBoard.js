@@ -12,8 +12,7 @@ export default () => {
     setSort,
     show,
     setShow,
-    sortedCards,
-    options
+    sortedCards
   } = useCovidHook()
 
   return (
@@ -23,7 +22,6 @@ export default () => {
         search={search}
         sort={sort}
         onChangeSort={setSort}
-        options={options}
         setShow={setShow}
         show={show}
       />
@@ -33,7 +31,7 @@ export default () => {
             <Card key={c.country} {...c} index={index + 1} />
           ))
         ) : (
-          <Chart data={sortedCards} />
+          <Chart data={sortedCards} sortedKey={sort} />
         )}
       </div>
     </div>
