@@ -9,7 +9,6 @@
 <img style="max-width: 100%; margin-right: auto;  margin-left: auto; " src="https://raw.githubusercontent.com/nudelx/covid-live/master/img/graph.png" ></p>
 <h3>Mobile Support</h3>
 <p align="center">
-<img style="max-width: 100%; margin-right: auto;  margin-left: auto; " src="https://raw.githubusercontent.com/nudelx/covid-live/master/img/mobile1.jpg" ></p>
-
-<p align="center">
-<img style="max-width: 100%; margin-right: auto;  margin-left: auto; " src="https://raw.githubusercontent.com/nudelx/covid-live/master/img/mobile2.jpg" ></p>
+<img style="width: 400px; margin-right: auto;  margin-left: auto; " src="https://raw.githubusercontent.com/nudelx/covid-live/master/img/mobile1.jpg" >
+<img style="width: 400px; margin-right: auto;  margin-left: auto; " src="https://raw.githubusercontent.com/nudelx/covid-live/master/img/mobile2.jpg" >
+</p>
