@@ -12,7 +12,8 @@ export default () => {
     setSort,
     show,
     setShow,
-    sortedCards
+    sortedCards,
+    error,
   } = useCovidHook()
 
   return (
@@ -26,6 +27,7 @@ export default () => {
         show={show}
       />
       <div>
+        {error && alert(error)}
         {show === 'grid' ? (
           sortedCards.map((c, index) => (
             <Card key={c.country} {...c} index={index + 1} />
