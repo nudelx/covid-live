@@ -3,6 +3,7 @@ import Card from './card'
 import Header from './header'
 import Chart from './chart'
 import useCovidHook from './useCovidHook'
+import Error from './error'
 
 export default () => {
   const {
@@ -27,7 +28,7 @@ export default () => {
         show={show}
       />
       <div>
-        {error && alert(error)}
+        {error && <Error error={error} />}
         {show === 'grid' ? (
           sortedCards.map((c, index) => (
             <Card key={c.country} {...c} index={index + 1} />

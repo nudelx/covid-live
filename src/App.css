@@ -162,3 +162,31 @@ span:nth-child(1) {
   justify-content: center;
   align-items: center;
 } */
+
+.fog {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: #000;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.error {
+  border-radius: 5px;
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
+}
+
+.errorMsg {
+  background-color: #222;
+  border: 4px solid #c15c5c;
+  display: inline;
+  padding: 2%;
+}
