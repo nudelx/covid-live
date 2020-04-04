@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import useTimer from './useTimer'
 export default () => {
   const [cards, setCards] = useState([])
@@ -8,9 +8,25 @@ export default () => {
   const timer = useTimer(3600000) // 1 hours
   const [error, setError] = useState(null)
 
-  useEffect(() => {
-    getData()
-  }, [timer])
+  const getData = useCallback(
+    () =>
+      fetch('https://coronavirus-19-api.herokuapp.com/countries/')
+        .then((res) => res.json())
+        .then((res) =>
+          setCards(
+            res.sort(function(a, b) {
+              return a.active > b.active
+            })
+          )
+        )
+        .then(() => error && setError(null))
+        .catch(
+          (e) =>
+            console.log(e.toString()) ||
+            setError('The API temporary unavailable ')
+        ),
+    [error]
+  )
 
   const prepareData = ({ cards, search, sort }) => {
     const cardFiltered = search.length
@@ -23,23 +39,9 @@ export default () => {
       return 0
     })
   }
-
-  const getData = () =>
-    fetch('https://coronavirus-19-api.herokuapp.com/countries/')
-      .then((res) => res.json())
-      .then((res) =>
-        setCards(
-          res.sort(function(a, b) {
-            return a.active > b.active
-          })
-        )
-      )
-      .then(() => setError(null))
-      .catch(
-        (e) =>
-          console.log(e.toString()) ||
-          setError('The API temporary unavailable ')
-      )
+  useEffect(() => {
+    getData()
+  }, [getData, timer])
 
   return {
     error,
