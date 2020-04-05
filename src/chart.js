@@ -8,9 +8,9 @@ import {
   ComposedChart,
   Tooltip,
   Legend,
-  LabelList
+  LabelList,
 } from 'recharts'
-const renderCustomizedLabel = props => {
+const renderCustomizedLabel = (props) => {
   const { x, y, width, value } = props
   const radius = 10
   const offSet = 25
@@ -42,11 +42,11 @@ export default ({ data, sortedKey }) => {
           top: 10,
           right: 80,
           bottom: 20,
-          left: 20
+          left: 20,
         }}
       >
         <XAxis type="number" verticalAlign="top" orientation={'top'} />
-        <YAxis dataKey="country" type="category" />
+        <YAxis dataKey="country" type="category" interval={0} />
 
         <Tooltip />
         <Legend verticalAlign="top" align="right" />
