@@ -7,18 +7,17 @@ export default () => {
   const [show, setShow] = useState('grid')
   const timer = useTimer(3600000) // 1 hours
   const [error, setError] = useState(null)
+  const [world, setWorld] = useState(null)
 
   const getData = useCallback(
     () =>
       fetch('https://coronavirus-19-api.herokuapp.com/countries/')
         .then((res) => res.json())
-        .then((res) =>
-          setCards(
-            res.sort(function(a, b) {
-              return a.active > b.active
-            })
-          )
-        )
+        .then((res) => {
+          setWorld(res.shift())
+          return res
+        })
+        .then((res) => setCards(res))
         .then(() => error && setError(null))
         .catch(
           (e) =>
@@ -53,6 +52,7 @@ export default () => {
     setSort,
     show,
     setShow,
+    world,
     sortedCards: prepareData({ cards, search, sort }),
   }
 }
