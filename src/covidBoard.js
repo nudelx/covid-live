@@ -4,6 +4,7 @@ import Header from './header'
 import Chart from './chart'
 import useCovidHook from './useCovidHook'
 import Error from './error'
+import WorldCard from './worldCard'
 
 export default () => {
   const {
@@ -15,8 +16,8 @@ export default () => {
     setShow,
     sortedCards,
     error,
+    world,
   } = useCovidHook()
-
   return (
     <div>
       <Header
@@ -26,7 +27,7 @@ export default () => {
         onChangeSort={setSort}
         setShow={setShow}
         show={show}
-      />
+      ></Header>
       <div>
         {error && <Error error={error} />}
         {show === 'grid' ? (
@@ -37,6 +38,7 @@ export default () => {
           <Chart data={sortedCards} sortedKey={sort} />
         )}
       </div>
+      <WorldCard world={world} />
     </div>
   )
 }

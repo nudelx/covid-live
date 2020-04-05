@@ -8,11 +8,13 @@ export default ({
   sort,
   onChangeSort,
   setShow,
-  show
+  show,
+  children,
 }) => {
   return (
     <div className="header">
       <Title />
+      {children}
       <div
         onClick={() => setShow(show === 'grid' ? 'graph' : 'grid')}
         className={`toggleButton ${
@@ -27,7 +29,7 @@ export default ({
             placeholder="..."
             id="search"
             name="search"
-            onChange={e => {
+            onChange={(e) => {
               e.preventDefault()
               onChangeSearch(e.target.value)
             }}
@@ -36,8 +38,8 @@ export default ({
         </div>
         <div className="sort">
           <label htmlFor="sort">Sort</label>
-          <select id="sort" onChange={e => onChangeSort(e.target.value)}>
-            {options.map(o => (
+          <select id="sort" onChange={(e) => onChangeSort(e.target.value)}>
+            {options.map((o) => (
               <option key={o} value={o}>
                 {capitalize(o)}
               </option>
