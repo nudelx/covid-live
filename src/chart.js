@@ -30,13 +30,15 @@ const renderCustomizedLabel = (props) => {
   )
 }
 export default ({ data, sortedKey }) => {
+  const calculated = 30 * data.length
+  const graphHeight = calculated < 100 ? 100 : calculated
   return (
     <div className="chart">
       <ComposedChart
         layout="vertical"
         key={new Date().getTime()}
         width={900}
-        height={5000}
+        height={graphHeight}
         data={data}
         margin={{
           top: 10,
