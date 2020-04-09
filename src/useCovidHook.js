@@ -8,7 +8,6 @@ export default () => {
   const timer = useTimer(3600000) // 1 hours
   const [error, setError] = useState(null)
   const [world, setWorld] = useState(null)
-  const redundant = ['europe', 'asia', 'north america']
 
   const getData = useCallback(
     () =>
@@ -16,17 +15,18 @@ export default () => {
         .then((res) => res.json())
         .then((res) => {
           return res.filter((c) => {
-            if (
-              c.country.length === 0 ||
-              redundant.includes(c.country.toLowerCase())
-            ) {
-              return false
-            }
             if (c.country.toLowerCase() === 'world') {
               setWorld(c)
               return false
             }
-
+            if (
+              c.country.length === 0 ||
+              ['europe', 'asia', 'north america'].includes(
+                c.country.toLowerCase()
+              )
+            ) {
+              return false
+            }
             return true
           })
         })
@@ -39,7 +39,7 @@ export default () => {
             console.log(e.toString()) ||
             setError('The API temporary unavailable ')
         ),
-    [error, redundant]
+    [error]
   )
 
   const prepareData = ({ cards, search, sort }) => {
