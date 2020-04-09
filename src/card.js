@@ -4,7 +4,6 @@ import { options, capitalize } from './options'
 export default (props) => {
   const { country, index } = props
   const [flag, setFlag] = useState('#')
-
   useEffect(() => {
     fetch(
       `https://restcountries.eu/rest/v2/name/${
