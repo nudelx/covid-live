@@ -8,23 +8,38 @@ export default () => {
   const timer = useTimer(3600000) // 1 hours
   const [error, setError] = useState(null)
   const [world, setWorld] = useState(null)
+  const redundant = ['europe', 'asia', 'north america']
 
   const getData = useCallback(
     () =>
       fetch('https://coronavirus-19-api.herokuapp.com/countries/')
         .then((res) => res.json())
         .then((res) => {
-          setWorld(res.shift())
-          return res
+          return res.filter((c) => {
+            if (
+              c.country.length === 0 ||
+              redundant.includes(c.country.toLowerCase())
+            ) {
+              return false
+            }
+            if (c.country.toLowerCase() === 'world') {
+              setWorld(c)
+              return false
+            }
+
+            return true
+          })
         })
-        .then((res) => setCards(res))
+        .then((res) => {
+          setCards(res)
+        })
         .then(() => error && setError(null))
         .catch(
           (e) =>
             console.log(e.toString()) ||
             setError('The API temporary unavailable ')
         ),
-    [error]
+    [error, redundant]
   )
 
   const prepareData = ({ cards, search, sort }) => {
