@@ -1,5 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import useTimer from './useTimer'
+import { filterCards, handleError } from './utils'
+
 export default () => {
   const [cards, setCards] = useState([])
   const [search, setSearch] = useState('')
@@ -13,36 +15,10 @@ export default () => {
     () =>
       fetch('https://coronavirus-19-api.herokuapp.com/countries/')
         .then(res => res.json())
-        .then(res => {
-          return res.filter(c => {
-            if (c.country.toLowerCase() === 'world') {
-              setWorld(c)
-              return false
-            }
-            if (
-              c.country.length === 0 ||
-              [
-                'europe',
-                'asia',
-                'north america',
-                'South America',
-                'total:'
-              ].includes(c.country.toLowerCase())
-            ) {
-              return false
-            }
-            return true
-          })
-        })
-        .then(res => {
-          setCards(res)
-        })
+        .then(filterCards(setWorld))
+        .then(setCards)
         .then(() => error && setError(null))
-        .catch(
-          e =>
-            console.log(e.toString()) ||
-            setError('The API temporary unavailable ')
-        ),
+        .catch(handleError(setError)),
     [error]
   )
 
