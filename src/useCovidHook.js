@@ -12,16 +12,17 @@ export default () => {
   const getData = useCallback(
     () =>
       fetch('https://coronavirus-19-api.herokuapp.com/countries/')
-        .then((res) => res.json())
-        .then((res) => {
-          return res.filter((c) => {
+        .then(res => res.json())
+        .then(res => {
+          debugger
+          return res.filter(c => {
             if (c.country.toLowerCase() === 'world') {
               setWorld(c)
               return false
             }
             if (
               c.country.length === 0 ||
-              ['europe', 'asia', 'north america'].includes(
+              ['europe', 'asia', 'north america', 'total:'].includes(
                 c.country.toLowerCase()
               )
             ) {
@@ -30,12 +31,12 @@ export default () => {
             return true
           })
         })
-        .then((res) => {
+        .then(res => {
           setCards(res)
         })
         .then(() => error && setError(null))
         .catch(
-          (e) =>
+          e =>
             console.log(e.toString()) ||
             setError('The API temporary unavailable ')
         ),
@@ -44,7 +45,7 @@ export default () => {
 
   const prepareData = ({ cards, search, sort }) => {
     const cardFiltered = search.length
-      ? cards.filter((item) => item.country.match(new RegExp(search, 'i')))
+      ? cards.filter(item => item.country.match(new RegExp(search, 'i')))
       : cards
 
     return cardFiltered.sort(function(a, b) {
@@ -68,6 +69,6 @@ export default () => {
     show,
     setShow,
     world,
-    sortedCards: prepareData({ cards, search, sort }),
+    sortedCards: prepareData({ cards, search, sort })
   }
 }
