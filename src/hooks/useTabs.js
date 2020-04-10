@@ -1,6 +1,6 @@
 import { useState } from 'react'
 const tabs = [
-  { label: 'Live', id: 'live', icon: '🟢' },
+  { label: 'Live', id: 'live', icon: '⚡️' },
   { label: 'Graph', id: 'graph', icon: '📈' },
   { label: 'Prediction', id: 'prediction', icon: '🧙🏼‍♂️' }
 ]

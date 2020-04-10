@@ -266,9 +266,9 @@ span:nth-child(1) {
   color: #576163;
   outline: none;
   cursor: pointer;
-  border-top: 1px solid #08394d;
-  border-left: 1px solid #08394d;
-  border-right: 1px solid #08394d;
+  border-top: 1px solid #093042;
+  border-left: 1px solid #093042;
+  border-right: 1px solid #093042;
   padding: 5px;
 }
 
@@ -282,6 +282,6 @@ span:nth-child(1) {
 
 .board {
   position: relative;
-  border-top: 1px solid #08394d;
+  border-top: 1px solid #093042;
   padding-top: 20px;
 }
