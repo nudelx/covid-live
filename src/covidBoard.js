@@ -1,13 +1,12 @@
 import React from 'react'
-import Card from './card'
+
 import Header from './header'
-import Chart from './chart'
 import useCovidHook from './hooks/useCovidHook'
-import useView from './hooks/useView'
-import Error from './error'
 import WorldCard from './worldCard'
-import ToolBox from './toolBox'
-import SearchSort from './searchSort'
+import Title from './title'
+import useTabs from './hooks/useTabs'
+import Tabs from './tabs'
+import Board from './board'
 
 export default () => {
   const {
@@ -20,39 +19,23 @@ export default () => {
     world
   } = useCovidHook()
 
-  const { show, setShow, predShow, setShowPred } = useView('grid')
-  console.log('render', predShow)
+  const { tab, setTabs, tabs } = useTabs('live')
+  console.log('render', tab)
   return (
     <div>
-      <Header
-        onChangeSearch={setSearch}
-        search={search}
-        sort={sort}
-        onChangeSort={setSort}
-      >
-        <ToolBox
-          setShowPred={setShowPred}
-          setShow={setShow}
-          predShow={predShow}
-          show={show}
-        />
-        <SearchSort
-          search={search}
-          onChangeSearch={setSearch}
-          sort={sort}
-          onChangeSort={setSort}
-        />
+      <Header>
+        <Title />
+        <Tabs tab={tab} setTabs={setTabs} tabs={tabs} />
       </Header>
-      <div>
-        {error && <Error error={error} />}
-        {show === 'grid' ? (
-          sortedCards.map((c, index) => (
-            <Card key={c.country} {...c} index={index + 1} />
-          ))
-        ) : (
-          <Chart data={sortedCards} sortedKey={sort} />
-        )}
-      </div>
+      <Board
+        search={search}
+        setSearch={setSearch}
+        sort={sort}
+        setSort={setSort}
+        sortedCards={sortedCards}
+        error={error}
+        tab={tab}
+      />
       <WorldCard world={world} />
     </div>
   )

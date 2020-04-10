@@ -1,13 +1,10 @@
 import { useState } from 'react'
 
 export default init => {
-  const [show, setShow] = useState('grid')
-  const [predShow, setShowPred] = useState('live')
+  const [show, setShow] = useState(init)
 
   return {
     show,
-    setShow,
-    predShow,
-    setShowPred
+    setShow
   }
 }

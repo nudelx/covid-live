@@ -250,3 +250,38 @@ span:nth-child(1) {
 .worldCard li:first-child {
   border-left: 0px;
 }
+
+.tabs {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: 16px;
+  padding: 20px 20px 0px 20px;
+}
+
+.tabs li {
+  border-radius: 2px;
+  display: inline-block;
+  margin-right: 10px;
+  color: #576163;
+  outline: none;
+  cursor: pointer;
+  border-top: 1px solid #08394d;
+  border-left: 1px solid #08394d;
+  border-right: 1px solid #08394d;
+  padding: 5px;
+}
+
+.tabs li.active {
+  color: #bbc9cc;
+  border-bottom: 5px solid #041d27;
+  position: relative;
+  top: 1px;
+  z-index: 20;
+}
+
+.board {
+  position: relative;
+  border-top: 1px solid #08394d;
+  padding-top: 20px;
+}
