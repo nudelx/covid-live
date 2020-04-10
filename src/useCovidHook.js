@@ -21,9 +21,13 @@ export default () => {
             }
             if (
               c.country.length === 0 ||
-              ['europe', 'asia', 'north america', 'total:'].includes(
-                c.country.toLowerCase()
-              )
+              [
+                'europe',
+                'asia',
+                'north america',
+                'South America',
+                'total:'
+              ].includes(c.country.toLowerCase())
             ) {
               return false
             }
