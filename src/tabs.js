@@ -10,7 +10,7 @@ export default ({ tab, setTabs, tabs }) => {
           onClick={e => setTabs(e.target.id)}
           className={tab === t.id ? 'active' : ''}
         >
-          {t.label}
+          {`${t.icon} ${t.label}`}
         </li>
       ))}
     </ul>

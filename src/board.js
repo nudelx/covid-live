@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Error from './error'
 import SearchSort from './searchSort'
 import tabViews from './tabsView'

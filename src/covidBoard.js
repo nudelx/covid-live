@@ -20,7 +20,6 @@ export default () => {
   } = useCovidHook()
 
   const { tab, setTabs, tabs } = useTabs('live')
-  console.log('render', tab)
   return (
     <div>
       <Header>
