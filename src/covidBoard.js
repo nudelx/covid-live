@@ -16,8 +16,9 @@ export default () => {
     setShow,
     sortedCards,
     error,
-    world,
+    world
   } = useCovidHook()
+  console.log('render')
   return (
     <div>
       <Header
