@@ -14,7 +14,6 @@ export default () => {
       fetch('https://coronavirus-19-api.herokuapp.com/countries/')
         .then(res => res.json())
         .then(res => {
-          debugger
           return res.filter(c => {
             if (c.country.toLowerCase() === 'world') {
               setWorld(c)
