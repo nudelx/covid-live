@@ -6,7 +6,7 @@ export default () => {
   const [cards, setCards] = useState([])
   const [search, setSearch] = useState('')
   const [sort, setSort] = useState('active')
-  const [show, setShow] = useState('grid')
+
   const timer = useTimer(3600000) // 1 hours
   const [error, setError] = useState(null)
   const [world, setWorld] = useState(null)
@@ -45,8 +45,6 @@ export default () => {
     setSearch,
     sort,
     setSort,
-    show,
-    setShow,
     world,
     sortedCards: prepareData({ cards, search, sort })
   }

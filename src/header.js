@@ -2,25 +2,11 @@ import React from 'react'
 import { options, capitalize } from './options'
 import Title from './title'
 
-export default ({
-  onChangeSearch,
-  search,
-  sort,
-  onChangeSort,
-  setShow,
-  show,
-  children,
-}) => {
+export default ({ onChangeSearch, search, onChangeSort, children }) => {
   return (
     <div className="header">
       <Title />
       {children}
-      <div
-        onClick={() => setShow(show === 'grid' ? 'graph' : 'grid')}
-        className={`toggleButton ${
-          show === 'grid' ? 'chart-icon' : 'grid-icon'
-        }`}
-      ></div>
 
       <div className="tools">
         <div className="search">
@@ -29,7 +15,7 @@ export default ({
             placeholder="..."
             id="search"
             name="search"
-            onChange={(e) => {
+            onChange={e => {
               e.preventDefault()
               onChangeSearch(e.target.value)
             }}
@@ -38,8 +24,8 @@ export default ({
         </div>
         <div className="sort">
           <label htmlFor="sort">Sort</label>
-          <select id="sort" onChange={(e) => onChangeSort(e.target.value)}>
-            {options.map((o) => (
+          <select id="sort" onChange={e => onChangeSort(e.target.value)}>
+            {options.map(o => (
               <option key={o} value={o}>
                 {capitalize(o)}
               </option>

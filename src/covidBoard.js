@@ -3,8 +3,10 @@ import Card from './card'
 import Header from './header'
 import Chart from './chart'
 import useCovidHook from './useCovidHook'
+import useView from './useView'
 import Error from './error'
 import WorldCard from './worldCard'
+import ToolBox from './toolBox'
 
 export default () => {
   const {
@@ -12,13 +14,13 @@ export default () => {
     setSearch,
     sort,
     setSort,
-    show,
-    setShow,
     sortedCards,
     error,
     world
   } = useCovidHook()
-  console.log('render')
+
+  const { show, setShow, predShow, setShowPred } = useView('grid')
+  console.log('render', predShow)
   return (
     <div>
       <Header
@@ -26,18 +28,27 @@ export default () => {
         search={search}
         sort={sort}
         onChangeSort={setSort}
-        setShow={setShow}
-        show={show}
-      ></Header>
+      >
+        <ToolBox
+          setShowPred={setShowPred}
+          setShow={setShow}
+          predShow={predShow}
+          show={show}
+        />
+      </Header>
       <div>
         {error && <Error error={error} />}
-        {show === 'grid' ? (
-          sortedCards.map((c, index) => (
-            <Card key={c.country} {...c} index={index + 1} />
-          ))
-        ) : (
-          <Chart data={sortedCards} sortedKey={sort} />
-        )}
+        {predShow === 'live' ? (
+          <div>
+            {show === 'grid' ? (
+              sortedCards.map((c, index) => (
+                <Card key={c.country} {...c} index={index + 1} />
+              ))
+            ) : (
+              <Chart data={sortedCards} sortedKey={sort} />
+            )}
+          </div>
+        ) : null}
       </div>
       <WorldCard world={world} />
     </div>
