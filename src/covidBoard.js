@@ -2,11 +2,12 @@ import React from 'react'
 import Card from './card'
 import Header from './header'
 import Chart from './chart'
-import useCovidHook from './useCovidHook'
-import useView from './useView'
+import useCovidHook from './hooks/useCovidHook'
+import useView from './hooks/useView'
 import Error from './error'
 import WorldCard from './worldCard'
 import ToolBox from './toolBox'
+import SearchSort from './searchSort'
 
 export default () => {
   const {
@@ -35,20 +36,22 @@ export default () => {
           predShow={predShow}
           show={show}
         />
+        <SearchSort
+          search={search}
+          onChangeSearch={setSearch}
+          sort={sort}
+          onChangeSort={setSort}
+        />
       </Header>
       <div>
         {error && <Error error={error} />}
-        {predShow === 'live' ? (
-          <div>
-            {show === 'grid' ? (
-              sortedCards.map((c, index) => (
-                <Card key={c.country} {...c} index={index + 1} />
-              ))
-            ) : (
-              <Chart data={sortedCards} sortedKey={sort} />
-            )}
-          </div>
-        ) : null}
+        {show === 'grid' ? (
+          sortedCards.map((c, index) => (
+            <Card key={c.country} {...c} index={index + 1} />
+          ))
+        ) : (
+          <Chart data={sortedCards} sortedKey={sort} />
+        )}
       </div>
       <WorldCard world={world} />
     </div>
