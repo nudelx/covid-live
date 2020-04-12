@@ -284,4 +284,5 @@ span:nth-child(1) {
   position: relative;
   border-top: 1px solid #093042;
   padding-top: 20px;
+  padding-bottom: 30px;
 }
