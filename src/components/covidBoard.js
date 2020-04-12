@@ -9,6 +9,7 @@ import Tabs from './tabs'
 import Board from './board'
 
 export default () => {
+  const { tab, setTabs, tabs } = useTabs('live')
   const {
     search,
     setSearch,
@@ -19,7 +20,6 @@ export default () => {
     world
   } = useCovidHook()
 
-  const { tab, setTabs, tabs } = useTabs('live')
   return (
     <div>
       <Header>
