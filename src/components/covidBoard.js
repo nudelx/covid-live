@@ -2,7 +2,7 @@ import React from 'react'
 
 import Header from './header'
 import useCovidHook from '../hooks/useCovidHook'
-import WorldCard from './worldCard'
+import HotLine from './hotLine'
 import Title from './title'
 import useTabs from '../hooks/useTabs'
 import Tabs from './tabs'
@@ -35,7 +35,7 @@ export default () => {
         error={error}
         tab={tab}
       />
-      <WorldCard world={world} />
+      <HotLine world={world} />
     </div>
   )
 }
