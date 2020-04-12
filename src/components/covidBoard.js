@@ -1,10 +1,10 @@
 import React from 'react'
 
 import Header from './header'
-import useCovidHook from './hooks/useCovidHook'
+import useCovidHook from '../hooks/useCovidHook'
 import WorldCard from './worldCard'
 import Title from './title'
-import useTabs from './hooks/useTabs'
+import useTabs from '../hooks/useTabs'
 import Tabs from './tabs'
 import Board from './board'
 
