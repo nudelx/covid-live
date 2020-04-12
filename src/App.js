@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import CovidBoard from './covidBoard'
+import CovidBoard from './components/covidBoard'
 
 function App() {
   return (

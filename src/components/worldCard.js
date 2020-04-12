@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { options, capitalize } from './options'
+import { options, capitalize } from '../utils/options'
 
 export default ({ world }) => {
   const ulRef = useRef(null)
@@ -17,7 +17,7 @@ export default ({ world }) => {
   }, [])
 
   useEffect(() => {
-    const calcPos = (x) => (Math.abs(x) > width ? x * -1 : x)
+    const calcPos = x => (Math.abs(x) > width ? x * -1 : x)
     const t = setTimeout(() => setPos(calcPos(pos) + 1), 20)
     return () => clearTimeout(t)
   }, [pos, width])
@@ -26,7 +26,7 @@ export default ({ world }) => {
     <div className="worldCard">
       <div className="world worldTitle"></div>
       <ul ref={ulRef}>
-        {options.map((o) => (
+        {options.map(o => (
           <li style={{ left: `${-pos}px` }} key={o}>{`${capitalize(
             o
           )}: ${world && world[o]}`}</li>

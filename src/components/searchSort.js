@@ -1,5 +1,5 @@
 import React from 'react'
-import { options, capitalize } from './options'
+import { options, capitalize } from '../utils/options'
 
 export default ({ onChangeSearch, search, onChangeSort }) => {
   return (

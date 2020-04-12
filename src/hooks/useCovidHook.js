@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
 import useTimer from './useTimer'
-import { filterCards, handleError } from '../utils'
+import { filterCards, handleError } from '../utils/utils'
 
 export default () => {
   const [cards, setCards] = useState([])
