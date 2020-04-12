@@ -12,7 +12,6 @@ export const filterCards = setWorld => res => {
       return false
     }
     if (c.country.length === 0 || exclude.includes(c.country.toLowerCase())) {
-      console.log(c.country)
       return false
     }
     return true
