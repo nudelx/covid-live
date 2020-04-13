@@ -2,6 +2,7 @@ import React from 'react'
 import Error from './error'
 import SearchSort from './searchSort'
 import tabViews from './tabsView'
+require('../utils/firebase')
 
 export default ({
   tab,

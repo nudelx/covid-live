@@ -35,6 +35,7 @@ export default () => {
         error={error}
         tab={tab}
       />
+
       <HotLine world={world} />
     </div>
   )
