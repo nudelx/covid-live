@@ -52,6 +52,12 @@
   width: 100px;
 }
 .location {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
   font-size: 12px;
   text-align: left;
   color: #adbabc;
@@ -68,9 +74,11 @@
 }
 
 .locationList {
+  display: block;
   list-style: none;
   margin: 0px;
   padding: 0px;
+  text-align: center;
 }
 
 .locationList li {
@@ -80,6 +88,9 @@
   display: inline-block;
   border-right: 1px solid #ccc;
   margin-right: 3px;
+}
+.locationList li:last-child {
+  border: 0px;
 }
 
 .locationList span:nth-child(2) {
@@ -322,6 +333,12 @@ span:nth-child(1) {
   padding-bottom: 30px;
 }
 
+.dropDown {
+  border: 1px solid red;
+  width: 100%;
+  display: block;
+}
+
 .dropDown .inputHolder {
   position: relative;
 }
@@ -373,4 +390,33 @@ span:nth-child(1) {
 
 .dropDown .menu li:hover {
   background-color: #b6c5c7;
+}
+
+.predictionBoard {
+  border: 1px solid red;
+  width: calc(90vw);
+}
+
+.chartList {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  margin: 20px 10px;
+}
+
+.chartList li {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.chartTitle {
+  font-size: calc(12px + 2vmin);
+}
+
+.chartCenter {
+  text-align: center;
+}
+
+.chartCenterre > div.charts-wrapper {
+  display: inline-block;
 }

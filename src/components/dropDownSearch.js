@@ -40,13 +40,11 @@ export default props => {
       ? options.filter(item => item.country.match(new RegExp(typeValue, 'i')))
       : options
 
-  console.log('selected', selected)
-  console.log('menuOpen', menuOpen)
-  console.log('typeValue', typeValue)
   useEffect(() => {
     document.addEventListener('keydown', handleKeyUp, false)
     return () => document.removeEventListener('keydown', handleKeyUp, false)
   }, [handleKeyUp])
+
   return (
     <div className="dropDown" style={style}>
       <div className="inputHolder" style={{ ...style, whiteSpace: 'nowrap' }}>

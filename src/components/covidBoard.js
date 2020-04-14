@@ -36,7 +36,7 @@ export default () => {
         tab={tab}
       />
 
-      <HotLine world={world} />
+      {tab !== 'prediction' && <HotLine world={world} />}
     </div>
   )
 }
