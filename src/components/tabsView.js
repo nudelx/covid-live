@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './card'
 import Chart from './chart'
+import PredictionBoard from './prediction/predictionBoard'
 
 export default {
   live: ({ sortedCards }) =>
@@ -10,5 +11,5 @@ export default {
   graph: ({ sortedCards, sort }) => (
     <Chart data={sortedCards} sortedKey={sort} />
   ),
-  prediction: props => {}
+  prediction: props => <PredictionBoard {...props} />
 }
