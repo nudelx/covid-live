@@ -6,6 +6,7 @@ import PredictionChart from './predictionChart'
 
 export default () => {
   const [prediction, setPrediction] = useState(null)
+  const [selected, setSelected] = useState(null)
   const normalizeData = data => {
     const e = data.map(c => {
       const obj = {
@@ -43,41 +44,53 @@ export default () => {
   }, [])
 
   console.log('render prediction', prediction)
+  console.log('selected for prediction', selected)
   if (!prediction) return null
   const dataKeysObj = {
     growth: ['growth', 'trend'],
     daily: 'daily',
     cases: 'cases'
   }
+
+  if (!prediction) return null
+
+  const selectedPrediction = selected
+    ? prediction.filter(i => i.country === selected.country)[0]
+    : prediction[0]
   return (
     <div className="predictionBoard">
       <div className="dropHolder">
-        <DropDown options={prediction} index={'country'} name={'country'} />
+        <DropDown
+          options={prediction}
+          index={'country'}
+          name={'country'}
+          onChange={setSelected}
+        />
       </div>
       <ul className="chartList">
         <li>
           <PredictionChart
-            data={prediction && prediction[0]}
+            data={selectedPrediction}
             dataKeys={dataKeysObj.growth}
-            country={prediction[0].country}
-            title={`${prediction[0].country} - ${dataKeysObj.growth.join(
+            country={selectedPrediction.country}
+            title={`${selectedPrediction.country} - ${dataKeysObj.growth.join(
               ' '
             )} Prediction`}
           />
         </li>
         <li>
           <PredictionChart
-            data={prediction && prediction[0]}
-            country={prediction[0].country}
+            data={selectedPrediction}
+            country={selectedPrediction.country}
             dataKeys={dataKeysObj.daily}
-            title={`${prediction[0].country} - ${dataKeysObj.daily}`}
+            title={`${selectedPrediction.country} - ${dataKeysObj.daily}`}
           />
         </li>
         <li>
           <PredictionChart
-            data={prediction && prediction[0]}
+            data={selectedPrediction}
             dataKeys={dataKeysObj.cases}
-            title={`${prediction[0].country} - ${dataKeysObj.cases}`}
+            title={`${selectedPrediction.country} - ${dataKeysObj.cases}`}
           />
         </li>
       </ul>
