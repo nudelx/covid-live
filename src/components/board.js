@@ -15,12 +15,14 @@ export default ({
 }) => {
   return (
     <div className="board">
-      <SearchSort
-        search={search}
-        onChangeSearch={setSearch}
-        sort={sort}
-        onChangeSort={setSort}
-      />
+      {tab !== 'prediction' && (
+        <SearchSort
+          search={search}
+          onChangeSearch={setSearch}
+          sort={sort}
+          onChangeSort={setSort}
+        />
+      )}
       {error && <Error error={error} />}
       {tabViews[tab]({ sortedCards, sort })}
     </div>

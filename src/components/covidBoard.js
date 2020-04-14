@@ -9,7 +9,7 @@ import Tabs from './tabs'
 import Board from './board'
 
 export default () => {
-  const { tab, setTabs, tabs } = useTabs('live')
+  const { tab, setTabs, tabs } = useTabs('prediction')
   const {
     search,
     setSearch,

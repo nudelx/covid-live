@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './card'
 import Chart from './chart'
-import PredictionBoard from './predictionBoard'
+import PredictionBoard from './prediction/predictionBoard'
 
 export default {
   live: ({ sortedCards }) =>

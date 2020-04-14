@@ -51,7 +51,41 @@
   margin-right: 20px;
   width: 100px;
 }
+.location {
+  font-size: 12px;
+  text-align: left;
+}
 
+.locationTitle {
+  font-size: calc(1+1vmin);
+  background-color: #072a34;
+  padding: 5px;
+}
+
+.locationBody {
+  padding: 5px;
+}
+
+.locationList {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.locationList li {
+  white-space: nowrap;
+  overflow: scroll;
+  padding: 2px;
+  display: inline-block;
+  border-right: 1px solid #ccc;
+  margin-right: 3px;
+}
+
+.locationList span:nth-child(2) {
+  margin-right: 2px;
+}
+
+.locationList span:nth-child(1),
 span:nth-child(1) {
   text-align: left;
 }
@@ -285,4 +319,57 @@ span:nth-child(1) {
   border-top: 1px solid #093042;
   padding-top: 20px;
   padding-bottom: 30px;
+}
+
+.dropDown {
+}
+
+.dropDown .inputHolder {
+  position: relative;
+}
+
+.dropDown .input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.dropDown .input:focus {
+  border: 2px solid #333;
+}
+.dropDown .button {
+  position: relative;
+  cursor: pointer;
+  background-color: #fff;
+  color: #222;
+  text-align: center;
+  left: -30px;
+  vertical-align: middle;
+}
+
+.dropDown .menu {
+  z-index: 22;
+  box-shadow: 1px 1px 14px 1px#000;
+  position: absolute;
+  outline: none;
+  min-width: 400px;
+}
+
+.dropDown .menu ul {
+  width: 100%;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  background-color: #fff;
+  color: #576163;
+}
+
+.dropDown .menu li {
+  padding: 2px 5px;
+  text-align: left;
+}
+
+.dropDown .menu li:hover {
+  background-color: #eee;
 }
