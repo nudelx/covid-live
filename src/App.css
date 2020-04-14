@@ -51,7 +51,53 @@
   margin-right: 20px;
   width: 100px;
 }
+.location {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  font-size: 12px;
+  text-align: left;
+  color: #adbabc;
+}
 
+.locationTitle {
+  font-size: calc(1+1vmin);
+  background-color: #072a34;
+  padding: 5px;
+}
+
+.locationBody {
+  padding: 5px;
+}
+
+.locationList {
+  display: block;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.locationList li {
+  white-space: nowrap;
+  overflow: scroll;
+  padding: 2px;
+  display: inline-block;
+  border-right: 1px solid #ccc;
+  margin-right: 3px;
+}
+.locationList li:last-child {
+  border: 0px;
+}
+
+.locationList span:nth-child(2) {
+  margin-right: 2px;
+}
+
+.locationList span:nth-child(1),
 span:nth-child(1) {
   text-align: left;
 }
@@ -285,4 +331,148 @@ span:nth-child(1) {
   border-top: 1px solid #093042;
   padding-top: 20px;
   padding-bottom: 30px;
+}
+
+.dropHolder {
+  margin: 30px 0px;
+}
+
+.dropDown {
+  width: 90%;
+  display: block;
+}
+
+.dropDown .inputHolder {
+  position: relative;
+}
+
+.dropDown .input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: 14px;
+  background-color: #c5d6d8;
+  border: 1px solid #c5d6d8;
+  height: 14px;
+}
+
+.dropDown .input:focus {
+  border: 1px solid #3cc2d1;
+}
+.dropDown .button {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfkBA4QMAp3615aAAABgUlEQVQ4y4XUTW4TQRAF4M+AFLMgyd52FpwicS6ADLGVKyBvIsg1grF8gjhwiEjmLMACJMjKtpD8I2HktJvFTPwz4yRv1dX9XnV1dVUVbOJA3WsvlXDjp55rv9yDsiu3oigaGKSrua7yNnrdWNT3waEdsONIy0A0dpKlnwuCCy9yjna1BMH5pvdgkveyRMNUWJ2XjdfNeyTBWCkxrkQXHkNb1E0Seau/JfYs9gzMVZ5oeOqTyaOCkc+eafBFdAgKOmo5Yk1HAVRFPb5bpHmvCmYZSc1MUAVFC9+YGCyP3wr+qS/tV/5aOFvaQxMmhmse1yVZOn+Mk5CKWyR5+nPR1+TRRxtxNwUzM0FzY/84efR7USuTmaaQoydf944Dc327OUmWvm9orgLdLXfk0RFdJsuk+BoP0k8tjO6KjxPB9AHJqangzfpW0kBteznyvo5FtoGSW8aigY+q6b8UHWsbikab3u9Q0jVPW39ouBwCl6vYpXW4QiUdM2Xc+KHn2u91wn+QQ52891uxRgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMC0wNC0xNFQxNjo0ODoxMCswMDowMOQt4ZcAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjAtMDQtMTRUMTY6NDg6MTArMDA6MDCVcFkrAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==');
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: #abb9bb;
+  width: 40px;
+  height: 36px;
+  color: #222;
+  text-align: center;
+  left: -40px;
+  vertical-align: bottom;
+  line-height: 32px;
+}
+
+.dropDown .menu {
+  z-index: 22;
+  box-shadow: 1px 1px 14px 1px#000;
+  position: absolute;
+  outline: none;
+  min-width: 400px;
+  font-size: 20px;
+}
+
+.dropDown .menu ul {
+  width: 100%;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  background-color: #c5d6d8;
+  color: #343a3b;
+}
+
+.dropDown .menu li {
+  padding: 2px 5px;
+  text-align: left;
+}
+
+.dropDown .menu li:hover {
+  background-color: #b6c5c7;
+}
+
+.predictionBoard {
+  text-align: center;
+  width: calc(95vw);
+}
+
+.chartList {
+  padding: 0px;
+  list-style: none;
+  margin: 60px 10px;
+}
+
+.chartList li {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.chartTitle {
+  font-size: calc(12px + 2vmin);
+}
+
+.chartCenter {
+  text-align: center;
+}
+
+.chartCenterre > div.charts-wrapper {
+  display: inline-block;
+}
+
+.chartShadow {
+  box-shadow: 1px 1px 14px 1px#000;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }

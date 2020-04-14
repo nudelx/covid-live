@@ -2,6 +2,7 @@ import React from 'react'
 import Error from './error'
 import SearchSort from './searchSort'
 import tabViews from './tabsView'
+require('../utils/firebase')
 
 export default ({
   tab,
@@ -14,12 +15,14 @@ export default ({
 }) => {
   return (
     <div className="board">
-      <SearchSort
-        search={search}
-        onChangeSearch={setSearch}
-        sort={sort}
-        onChangeSort={setSort}
-      />
+      {tab !== 'prediction' && (
+        <SearchSort
+          search={search}
+          onChangeSearch={setSearch}
+          sort={sort}
+          onChangeSort={setSort}
+        />
+      )}
       {error && <Error error={error} />}
       {tabViews[tab]({ sortedCards, sort })}
     </div>
