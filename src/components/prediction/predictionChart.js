@@ -5,7 +5,7 @@ export default ({ data, title }) => {
   console.log('DATA', data)
   if (!data) return null
   const graphHeight = 400
-  let minGraphWidth = window.screen.width * 0.9
+  let minGraphWidth = window.screen.width * 0.7
   minGraphWidth = minGraphWidth < 500 ? 500 : minGraphWidth
 
   console.log('graphData', data)
