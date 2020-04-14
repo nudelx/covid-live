@@ -45,14 +45,13 @@ export default () => {
 
   console.log('render prediction', prediction)
   console.log('selected for prediction', selected)
-  if (!prediction) return null
   const dataKeysObj = {
     growth: ['growth', 'trend'],
     daily: ['daily'],
     cases: ['cases']
   }
 
-  if (!prediction) return null
+  if (!prediction) return <div className="loader">Loading ...</div>
 
   const selectedPrediction = selected
     ? prediction.filter(i => i.country === selected.country)[0]

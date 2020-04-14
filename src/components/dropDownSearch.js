@@ -48,7 +48,6 @@ export default props => {
     document.addEventListener('keydown', handleKeyUp, false)
     return () => document.removeEventListener('keydown', handleKeyUp, false)
   }, [handleKeyUp])
-  console.log('render derop')
   return (
     <div className="dropDown" style={style}>
       <div className="inputHolder" style={{ ...style, whiteSpace: 'nowrap' }}>
