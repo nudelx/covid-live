@@ -352,13 +352,12 @@ span:nth-child(1) {
   outline: none;
   font-size: 14px;
   background-color: #c5d6d8;
-  border-color: #c5d6d8;
-  border-style: dotted;
-  height: 10px;
+  border: 1px solid #c5d6d8;
+  height: 14px;
 }
 
 .dropDown .input:focus {
-  border: 2px solid #333;
+  border: 1px solid #3cc2d1;
 }
 .dropDown .button {
   display: inline-block;
@@ -366,11 +365,11 @@ span:nth-child(1) {
   cursor: pointer;
   background-color: #abb9bb;
   width: 40px;
-  height: 34px;
+  height: 36px;
   color: #222;
   text-align: center;
   left: -40px;
-  vertical-align: middle;
+  vertical-align: bottom;
   line-height: 32px;
 }
 

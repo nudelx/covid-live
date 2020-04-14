@@ -1,30 +1,21 @@
 import React from 'react'
 import { Area, XAxis, YAxis, AreaChart, Tooltip, Legend } from 'recharts'
 
-export default ({ data, country }) => {
+export default ({ data, title }) => {
   console.log('DATA', data)
   if (!data) return null
   const graphHeight = 400
   let minGraphWidth = window.screen.width * 0.9
   minGraphWidth = minGraphWidth < 500 ? 500 : minGraphWidth
 
-  const graphData = data.growth.reduce(
-    (all, value, index) => [
-      ...all,
-      { growth: value, trend: data.trend[index], date: data.dates[index] }
-    ],
-    []
-  )
-  console.log('graphData', graphData)
+  console.log('graphData', data)
   return (
     <div className="chart chartCenter chartShadow">
-      <div className="chartTitle">
-        {`${country} - Covid 19 Growth Rate Prediction`}
-      </div>
+      <div className="chartTitle">{title}</div>
       <AreaChart
         width={minGraphWidth}
         height={graphHeight}
-        data={graphData}
+        data={data.data}
         margin={{
           top: 10,
           right: 30,
