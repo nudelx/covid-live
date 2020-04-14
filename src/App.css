@@ -54,6 +54,7 @@
 .location {
   font-size: 12px;
   text-align: left;
+  color: #adbabc;
 }
 
 .locationTitle {
@@ -321,9 +322,6 @@ span:nth-child(1) {
   padding-bottom: 30px;
 }
 
-.dropDown {
-}
-
 .dropDown .inputHolder {
   position: relative;
 }
@@ -333,6 +331,9 @@ span:nth-child(1) {
   padding: 10px;
   outline: none;
   font-size: 14px;
+  background-color: #c5d6d8;
+  border-color: #c5d6d8;
+  border-style: dotted;
 }
 
 .dropDown .input:focus {
@@ -341,7 +342,7 @@ span:nth-child(1) {
 .dropDown .button {
   position: relative;
   cursor: pointer;
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #222;
   text-align: center;
   left: -30px;
@@ -361,8 +362,8 @@ span:nth-child(1) {
   list-style: none;
   padding: 0px;
   margin: 0px;
-  background-color: #fff;
-  color: #576163;
+  background-color: #c5d6d8;
+  color: #343a3b;
 }
 
 .dropDown .menu li {
@@ -371,5 +372,5 @@ span:nth-child(1) {
 }
 
 .dropDown .menu li:hover {
-  background-color: #eee;
+  background-color: #b6c5c7;
 }

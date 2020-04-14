@@ -7,18 +7,6 @@ export default () => {
   const [prediction, setPrediction] = useState(null)
 
   useEffect(() => {
-    const normalizeOptions = options => {
-      if (Array.isArray(options)) {
-        return options.map(p => ({
-          ...p,
-          name: p.country,
-          key: p.country,
-          id: p.country
-        }))
-      } else {
-        console.log('jopa', options)
-      }
-    }
     fbApp
       .database()
       .ref()

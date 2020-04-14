@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 
 export default props => {
   const { options, index, name } = props
@@ -7,6 +7,20 @@ export default props => {
   const [typeValue, setTypeValue] = useState(null)
   const style = {
     width: '400px'
+  }
+
+  const handleKeyUp = useCallback(
+    e => {
+      if (e.key === 'Escape' && menuOpen) {
+        setMenuOpen(false)
+        setTypeValue(null)
+      }
+    },
+    [menuOpen]
+  )
+
+  const openMenu = () => {
+    setMenuOpen(!menuOpen)
   }
   const getSelected = el => {
     const selected = options.filter(o => o[index] === el.id)
@@ -29,17 +43,21 @@ export default props => {
   console.log('selected', selected)
   console.log('menuOpen', menuOpen)
   console.log('typeValue', typeValue)
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyUp, false)
+    return () => document.removeEventListener('keydown', handleKeyUp, false)
+  }, [handleKeyUp])
   return (
     <div className="dropDown" style={style}>
       <div className="inputHolder" style={{ ...style, whiteSpace: 'nowrap' }}>
         <input
           style={{ width: '100%' }}
-          placeholder="select a country"
+          placeholder="select a country or start typing"
           className="input"
           onChange={typeIn}
           value={(selected && selected[name]) || typeValue || ''}
         />
-        <i className="button" onClick={() => setMenuOpen(!menuOpen)}>
+        <i className="button" onClick={openMenu}>
           ▿
         </i>
       </div>
