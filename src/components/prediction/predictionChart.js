@@ -1,7 +1,27 @@
 import React from 'react'
 import { Area, XAxis, YAxis, AreaChart, Tooltip, Legend } from 'recharts'
+const colors = [
+  '#1abc9c',
+  '#3498db',
+  '#9b59b6',
+  '#e67e22',
+  '#c0392b',
+  '#f1c40f',
+  '#60a3bc',
+  '#3c6382',
+  '#0c2461',
+  '#079992',
+  '#f6b93b',
+  '#60a3bc',
+  '#eb2f06',
+  '#6a89cc',
+  '#D980FA'
+]
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max))
+}
 
-export default ({ data, title }) => {
+export default ({ data, title, dataKeys }) => {
   console.log('DATA', data)
   if (!data) return null
   const graphHeight = 400
@@ -34,7 +54,22 @@ export default ({ data, title }) => {
         />
         <YAxis interval={0} />
         <Tooltip />
-        <Area
+        {dataKeys.map(k => {
+          const color = colors[getRandomInt(colors.length)]
+          return (
+            <Area
+              key={k}
+              opacity="0.8"
+              type="monotone"
+              dataKey={k}
+              stackId="1"
+              stroke={color}
+              fill={color}
+            />
+          )
+        })}
+
+        {/* <Area
           opacity="0.8"
           type="monotone"
           dataKey="growth"
@@ -49,7 +84,7 @@ export default ({ data, title }) => {
           stackId="1"
           stroke="#208f4e"
           fill="#27ae60"
-        />
+        /> */}
       </AreaChart>
     </div>
   )

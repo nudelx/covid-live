@@ -48,8 +48,8 @@ export default () => {
   if (!prediction) return null
   const dataKeysObj = {
     growth: ['growth', 'trend'],
-    daily: 'daily',
-    cases: 'cases'
+    daily: ['daily'],
+    cases: ['cases']
   }
 
   if (!prediction) return null
@@ -83,14 +83,18 @@ export default () => {
             data={selectedPrediction}
             country={selectedPrediction.country}
             dataKeys={dataKeysObj.daily}
-            title={`${selectedPrediction.country} - ${dataKeysObj.daily}`}
+            title={`${selectedPrediction.country} - ${dataKeysObj.daily.join(
+              ' '
+            )}`}
           />
         </li>
         <li>
           <PredictionChart
             data={selectedPrediction}
             dataKeys={dataKeysObj.cases}
-            title={`${selectedPrediction.country} - ${dataKeysObj.cases}`}
+            title={`${selectedPrediction.country} - ${dataKeysObj.cases.join(
+              ' '
+            )}`}
           />
         </li>
       </ul>
