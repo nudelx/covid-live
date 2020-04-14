@@ -1,5 +1,13 @@
 import React from 'react'
-import { Area, XAxis, YAxis, AreaChart, Tooltip, Legend } from 'recharts'
+import {
+  Area,
+  XAxis,
+  CartesianGrid,
+  YAxis,
+  AreaChart,
+  Tooltip,
+  Legend
+} from 'recharts'
 const colors = [
   '#1abc9c',
   '#3498db',
@@ -15,7 +23,9 @@ const colors = [
   '#60a3bc',
   '#eb2f06',
   '#6a89cc',
-  '#D980FA'
+  '#D980FA',
+  '#C4E538',
+  '#FFC312'
 ]
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max))
@@ -54,12 +64,13 @@ export default ({ data, title, dataKeys }) => {
         />
         <YAxis interval={0} />
         <Tooltip />
+        <CartesianGrid strokeDasharray="2 2" stroke={'#062d3d'} />
         {dataKeys.map(k => {
           const color = colors[getRandomInt(colors.length)]
           return (
             <Area
               key={k}
-              opacity="0.8"
+              fillOpacity="0.3"
               type="monotone"
               dataKey={k}
               stackId="1"
