@@ -333,9 +333,12 @@ span:nth-child(1) {
   padding-bottom: 30px;
 }
 
+.dropHolder {
+  margin: 30px 0px;
+}
+
 .dropDown {
-  border: 1px solid red;
-  width: 100%;
+  width: 90%;
   display: block;
 }
 
@@ -351,19 +354,24 @@ span:nth-child(1) {
   background-color: #c5d6d8;
   border-color: #c5d6d8;
   border-style: dotted;
+  height: 10px;
 }
 
 .dropDown .input:focus {
   border: 2px solid #333;
 }
 .dropDown .button {
+  display: inline-block;
   position: relative;
   cursor: pointer;
-  /* background-color: #fff; */
+  background-color: #abb9bb;
+  width: 40px;
+  height: 34px;
   color: #222;
   text-align: center;
-  left: -30px;
+  left: -40px;
   vertical-align: middle;
+  line-height: 32px;
 }
 
 .dropDown .menu {
@@ -393,19 +401,18 @@ span:nth-child(1) {
 }
 
 .predictionBoard {
-  border: 1px solid red;
-  width: calc(90vw);
+  text-align: center;
+  width: calc(95vw);
 }
 
 .chartList {
   padding: 0px;
-  margin: 0px;
   list-style: none;
-  margin: 20px 10px;
+  margin: 60px 10px;
 }
 
 .chartList li {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -419,4 +426,8 @@ span:nth-child(1) {
 
 .chartCenterre > div.charts-wrapper {
   display: inline-block;
+}
+
+.chartShadow {
+  box-shadow: 1px 1px 14px 1px#000;
 }

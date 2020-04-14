@@ -6,7 +6,9 @@ export default props => {
   const [selected, setSelected] = useState(null)
   const [typeValue, setTypeValue] = useState(null)
   const style = {
-    width: '400px'
+    width: '350px',
+    textAlign: 'center',
+    display: 'inline-block'
   }
 
   const handleKeyUp = useCallback(

@@ -20,7 +20,7 @@ export default () => {
   console.log('render prediction', prediction)
   return (
     <div className="predictionBoard">
-      <div className="">
+      <div className="dropHolder">
         <DropDown options={prediction} index={'country'} name={'country'} />
       </div>
       <ul className="chartList">

@@ -1,38 +1,13 @@
 import React from 'react'
-import {
-  Bar,
-  Line,
-  Area,
-  XAxis,
-  YAxis,
-  AreaChart,
-  Tooltip,
-  Legend,
-  LabelList
-} from 'recharts'
-const renderCustomizedLabel = props => {
-  const { x, y, width, value } = props
-  const radius = 10
-  const offSet = 25
+import { Area, XAxis, YAxis, AreaChart, Tooltip, Legend } from 'recharts'
 
-  return (
-    <g>
-      <text
-        x={x + width + offSet}
-        y={y + radius}
-        fill="#ccc"
-        textAnchor="middle"
-        dominantBaseline="middle"
-      >
-        {value}
-      </text>
-    </g>
-  )
-}
 export default ({ data, country }) => {
   console.log('DATA', data)
   if (!data) return null
   const graphHeight = 400
+  let minGraphWidth = window.screen.width * 0.9
+  minGraphWidth = minGraphWidth < 500 ? 500 : minGraphWidth
+
   const graphData = data.growth.reduce(
     (all, value, index) => [
       ...all,
@@ -42,12 +17,12 @@ export default ({ data, country }) => {
   )
   console.log('graphData', graphData)
   return (
-    <div className="chart chartCenter">
+    <div className="chart chartCenter chartShadow">
       <div className="chartTitle">
         {`${country} - Covid 19 Growth Rate Prediction`}
       </div>
       <AreaChart
-        width={900}
+        width={minGraphWidth}
         height={graphHeight}
         data={graphData}
         margin={{
