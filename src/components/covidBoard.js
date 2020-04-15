@@ -7,9 +7,11 @@ import Title from './title'
 import useTabs from '../hooks/useTabs'
 import Tabs from './tabs'
 import Board from './board'
+import Spinner from './spinner'
+import { tabNames } from '../utils/tabNames'
 
 export default () => {
-  const { tab, setTabs, tabs } = useTabs('live')
+  const { tab, setTabs, tabs } = useTabs(tabNames.live)
   const {
     search,
     setSearch,
@@ -17,8 +19,10 @@ export default () => {
     setSort,
     sortedCards,
     error,
-    world
+    world,
   } = useCovidHook()
+
+  if (!sortedCards.length) return <Spinner />
 
   return (
     <div>
@@ -36,7 +40,7 @@ export default () => {
         tab={tab}
       />
 
-      {tab !== 'prediction' && <HotLine world={world} />}
+      {tab !== tabNames.prediction && <HotLine world={world} />}
     </div>
   )
 }
