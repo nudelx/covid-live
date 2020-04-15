@@ -6,6 +6,7 @@ export default () => {
   const [cards, setCards] = useState([])
   const [search, setSearch] = useState('')
   const [sort, setSort] = useState('active')
+  const [loading, setLoading] = useState('false')
 
   const timer = useTimer(3600000) // 1 hours
   const [error, setError] = useState(null)
@@ -13,18 +14,20 @@ export default () => {
 
   const getData = useCallback(
     () =>
+      setLoading(true) ||
       fetch('https://coronavirus-19-api.herokuapp.com/countries/')
-        .then(res => res.json())
+        .then((res) => res.json())
         .then(filterCards(setWorld))
         .then(setCards)
-        .then(() => error && setError(null))
-        .catch(handleError(setError)),
+        .then(() => setLoading(false))
+        .then(() => (error && setError(null)) || setLoading(false))
+        .catch(handleError(setError) || setLoading(false)),
     [error]
   )
 
   const prepareData = ({ cards, search, sort }) => {
     const cardFiltered = search.length
-      ? cards.filter(item => item.country.match(new RegExp(search, 'i')))
+      ? cards.filter((item) => item.country.match(new RegExp(search, 'i')))
       : cards
 
     return cardFiltered.sort(function(a, b) {
@@ -46,6 +49,7 @@ export default () => {
     sort,
     setSort,
     world,
-    sortedCards: prepareData({ cards, search, sort })
+    loading,
+    sortedCards: prepareData({ cards, search, sort }),
   }
 }
