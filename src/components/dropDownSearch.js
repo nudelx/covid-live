@@ -5,12 +5,12 @@ export default (props) => {
   const [menuOpen, setMenuOpen] = useState(null)
   const [selected, setSelected] = useState(null)
   const [typeValue, setTypeValue] = useState(null)
+  let screenSize = window.outerWidth * 0.8
   const style = {
-    width: '350px',
+    width: `${screenSize > 350 ? 350 : screenSize}px`,
     textAlign: 'center',
     display: 'inline-block',
   }
-
   const inputStyle = { width: '100%' }
   const placeholder = 'Select a Country or Start Typing ...'
 

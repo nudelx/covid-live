@@ -1,4 +1,5 @@
 import React from 'react'
+import { colors, getRandomInt } from '../../utils/chartUtils'
 import {
   Area,
   XAxis,
@@ -6,41 +7,17 @@ import {
   YAxis,
   AreaChart,
   Tooltip,
-  Legend
+  Legend,
 } from 'recharts'
-const colors = [
-  '#1abc9c',
-  '#3498db',
-  '#9b59b6',
-  '#e67e22',
-  '#c0392b',
-  '#f1c40f',
-  '#60a3bc',
-  '#3c6382',
-  '#0c2461',
-  '#079992',
-  '#f6b93b',
-  '#60a3bc',
-  '#eb2f06',
-  '#6a89cc',
-  '#D980FA',
-  '#C4E538',
-  '#FFC312'
-]
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max))
-}
 
 export default ({ data, title, dataKeys }) => {
-  console.log('DATA', data)
   if (!data) return null
   const graphHeight = 400
-  let minGraphWidth = window.screen.width * 0.7
+  let minGraphWidth = window.outerWidth * 0.9
   minGraphWidth = minGraphWidth < 500 ? 500 : minGraphWidth
 
-  console.log('graphData', data)
   return (
-    <div className="chart chartCenter chartShadow">
+    <div className="chartCenter chartShadow chatWidth">
       <div className="chartTitle">{title}</div>
       <AreaChart
         width={minGraphWidth}
@@ -50,7 +27,7 @@ export default ({ data, title, dataKeys }) => {
           top: 10,
           right: 30,
           left: 0,
-          bottom: 40
+          bottom: 40,
         }}
       >
         <Legend verticalAlign="top" align="right" />
@@ -60,12 +37,12 @@ export default ({ data, title, dataKeys }) => {
           angle={60}
           padding={{ right: 10 }}
           dy={30}
-          tick={{ fontSize: 9 }}
+          tick={{ fontSize: 10 }}
         />
         <YAxis interval={0} />
         <Tooltip />
         <CartesianGrid strokeDasharray="2 2" stroke={'#062d3d'} />
-        {dataKeys.map(k => {
+        {dataKeys.map((k) => {
           const color = colors[getRandomInt(colors.length)]
           return (
             <Area
@@ -79,23 +56,6 @@ export default ({ data, title, dataKeys }) => {
             />
           )
         })}
-
-        {/* <Area
-          opacity="0.8"
-          type="monotone"
-          dataKey="growth"
-          stackId="1"
-          stroke="#8e44ad"
-          fill="#8e44ad"
-        />
-        <Area
-          opacity="0.8"
-          type="monotone"
-          dataKey="trend"
-          stackId="1"
-          stroke="#208f4e"
-          fill="#27ae60"
-        /> */}
       </AreaChart>
     </div>
   )

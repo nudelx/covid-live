@@ -9,6 +9,7 @@ import { normalizeData, dataKeysObj } from '../../utils/predictionUtils'
 export default () => {
   const [prediction, setPrediction] = useState(null)
   const [selected, setSelected] = useState(null)
+  const [reload, setReload] = useState(true)
 
   useEffect(() => {
     fbApp
@@ -20,13 +21,24 @@ export default () => {
       })
   }, [])
 
+  useEffect(() => {
+    const resizeListener = () => {
+      window.timer = setTimeout(() => setReload(reload + 1), 500)
+    }
+    window.addEventListener('resize', resizeListener)
+    return () => {
+      clearTimeout(window.timer)
+      window.removeEventListener('resize', resizeListener)
+    }
+  }, [reload])
+
   if (!prediction) return <Spinner />
   const selectedPrediction = selected
     ? prediction.filter((i) => i.country === selected.country)[0]
     : prediction[0]
 
   return (
-    <div className="predictionBoard">
+    <div className="predictionBoard" key={reload}>
       <div className="dropHolder">
         <DropDown
           options={prediction}

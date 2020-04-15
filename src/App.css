@@ -28,7 +28,6 @@
   display: inline-block;
   margin: 20px;
   width: 300px;
-  /* height: 280px; */
   box-shadow: 1px 1px 14px 1px#000;
 }
 
@@ -405,7 +404,7 @@ span:nth-child(1) {
 
 .predictionBoard {
   text-align: center;
-  width: calc(95vw);
+  width: 100vw;
 }
 
 .chartList {
@@ -433,6 +432,13 @@ span:nth-child(1) {
 
 .chartShadow {
   box-shadow: 1px 1px 14px 1px#000;
+}
+.chatWidth {
+  width: 95vw;
+  padding: 20px 0px;
+  overflow: scroll;
+  font-size: 12px;
+  display: inline-block;
 }
 
 .loader,
