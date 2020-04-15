@@ -14,7 +14,6 @@ export default ({
   sortedCards,
   error,
 }) => {
-  console.log('render board')
   return (
     <div className="board">
       {tab !== tabNames.prediction && (

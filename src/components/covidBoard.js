@@ -20,9 +20,10 @@ export default () => {
     sortedCards,
     error,
     world,
+    loading,
   } = useCovidHook()
 
-  if (!sortedCards.length) return <Spinner />
+  if (loading) return <Spinner />
 
   return (
     <div>
