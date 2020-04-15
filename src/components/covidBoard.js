@@ -7,9 +7,10 @@ import Title from './title'
 import useTabs from '../hooks/useTabs'
 import Tabs from './tabs'
 import Board from './board'
+import { tabNames } from '../utils/tabNames'
 
 export default () => {
-  const { tab, setTabs, tabs } = useTabs('live')
+  const { tab, setTabs, tabs } = useTabs(tabNames.live)
   const {
     search,
     setSearch,
@@ -17,7 +18,7 @@ export default () => {
     setSort,
     sortedCards,
     error,
-    world
+    world,
   } = useCovidHook()
 
   return (
@@ -36,7 +37,7 @@ export default () => {
         tab={tab}
       />
 
-      {tab !== 'prediction' && <HotLine world={world} />}
+      {tab !== tabNames.prediction && <HotLine world={world} />}
     </div>
   )
 }
