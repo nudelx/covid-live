@@ -7,6 +7,7 @@ import Title from './title'
 import useTabs from '../hooks/useTabs'
 import Tabs from './tabs'
 import Board from './board'
+import Spinner from './spinner'
 import { tabNames } from '../utils/tabNames'
 
 export default () => {
@@ -20,6 +21,8 @@ export default () => {
     error,
     world,
   } = useCovidHook()
+
+  if (!sortedCards.length) return <Spinner />
 
   return (
     <div>

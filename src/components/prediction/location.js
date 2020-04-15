@@ -9,7 +9,7 @@ const options = [
   'isp',
   'region',
   'regionName',
-  'timezone'
+  'timezone',
 ]
 
 export default () => {
@@ -19,7 +19,7 @@ export default () => {
       <div className="location">
         <div className="locationBody">
           <ul className="locationList">
-            {options.map(o => (
+            {options.map((o) => (
               <li key={o}>
                 <span className="wide-title">{`${capitalize(o)}:`} </span>
                 <span>{location[o]}</span>

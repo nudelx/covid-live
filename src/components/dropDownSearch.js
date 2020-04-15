@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 
-export default props => {
+export default (props) => {
   const { options, index, name, onChange } = props
   const [menuOpen, setMenuOpen] = useState(null)
   const [selected, setSelected] = useState(null)
@@ -8,11 +8,14 @@ export default props => {
   const style = {
     width: '350px',
     textAlign: 'center',
-    display: 'inline-block'
+    display: 'inline-block',
   }
 
+  const inputStyle = { width: '100%' }
+  const placeholder = 'Select a Country or Start Typing ...'
+
   const handleKeyUp = useCallback(
-    e => {
+    (e) => {
       if (e.key === 'Escape' && menuOpen) {
         setMenuOpen(false)
         setTypeValue(null)
@@ -24,8 +27,8 @@ export default props => {
   const openMenu = () => {
     setMenuOpen(!menuOpen)
   }
-  const getSelected = el => {
-    const selected = options.filter(o => o[index] === el.id)
+  const getSelected = (el) => {
+    const selected = options.filter((o) => o[index] === el.id)
     const selectedValue = selected.length && selected.pop()
     setSelected(selectedValue)
     setMenuOpen(false)
@@ -33,7 +36,7 @@ export default props => {
     typeof onChange === 'function' && onChange(selectedValue)
   }
 
-  const typeIn = el => {
+  const typeIn = (el) => {
     setTypeValue(el.target.value)
     selected && setSelected(null)
     !menuOpen && setMenuOpen(true)
@@ -41,7 +44,7 @@ export default props => {
 
   const filtered =
     typeValue && typeValue.length
-      ? options.filter(item => item.country.match(new RegExp(typeValue, 'i')))
+      ? options.filter((item) => item.country.match(new RegExp(typeValue, 'i')))
       : options
 
   useEffect(() => {
@@ -52,8 +55,8 @@ export default props => {
     <div className="dropDown" style={style}>
       <div className="inputHolder" style={{ ...style, whiteSpace: 'nowrap' }}>
         <input
-          style={{ width: '100%' }}
-          placeholder="Select a Country or Start Typing ..."
+          style={inputStyle}
+          placeholder={placeholder}
           className="input"
           onChange={typeIn}
           value={(selected && selected[name]) || typeValue || ''}
@@ -63,9 +66,9 @@ export default props => {
       <div className="menu" style={{ display: menuOpen ? 'block' : 'none' }}>
         <ul>
           {filtered &&
-            filtered.map(o => (
+            filtered.map((o) => (
               <li
-                onClick={e => getSelected(e.target)}
+                onClick={(e) => getSelected(e.target)}
                 id={o[index]}
                 key={o[index]}
               >

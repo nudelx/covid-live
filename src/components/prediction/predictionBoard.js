@@ -3,59 +3,28 @@ import fbApp from '../../utils/firebase'
 import Location from './location'
 import DropDown from '../dropDownSearch'
 import PredictionChart from './predictionChart'
+import Spinner from '../spinner'
+import { normalizeData, dataKeysObj } from '../../utils/predictionUtils'
 
 export default () => {
   const [prediction, setPrediction] = useState(null)
   const [selected, setSelected] = useState(null)
-  const normalizeData = data => {
-    const e = data.map(c => {
-      const obj = {
-        confidence: c.confidence,
-        country: c.country,
-        update: c.update
-      }
-
-      obj.data = c.growth.reduce(
-        (all, value, index) => [
-          ...all,
-          {
-            growth: value,
-            trend: c.trend[index],
-            date: c.dates[index],
-            cases: c.cases[index],
-            daily: c.daily[index]
-          }
-        ],
-        []
-      )
-      return obj
-    })
-    return e
-  }
 
   useEffect(() => {
     fbApp
       .database()
       .ref()
       .child('data/prediction')
-      .on('value', snap => {
+      .on('value', (snap) => {
         setPrediction(normalizeData(snap.val()))
       })
   }, [])
 
-  console.log('render prediction', prediction)
-  console.log('selected for prediction', selected)
-  const dataKeysObj = {
-    growth: ['growth', 'trend'],
-    daily: ['daily'],
-    cases: ['cases']
-  }
-
-  if (!prediction) return <div className="loader">Loading ...</div>
-
+  if (!prediction) return <Spinner />
   const selectedPrediction = selected
-    ? prediction.filter(i => i.country === selected.country)[0]
+    ? prediction.filter((i) => i.country === selected.country)[0]
     : prediction[0]
+
   return (
     <div className="predictionBoard">
       <div className="dropHolder">

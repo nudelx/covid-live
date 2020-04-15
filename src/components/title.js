@@ -12,6 +12,10 @@ export default () => {
         <a href="https://github.com/javieraviles/covidAPI">API</a> by{' '}
         <a href="https://github.com/javieraviles">Javier Aviles</a>
       </div>
+      <div className="sub-title-2">
+        Prediction Data: by{' '}
+        <a href="https://www.linkedin.com/in/anton-shorsh/">Anton Shorsh</a>
+      </div>
     </div>
   )
 }
