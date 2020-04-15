@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import CountryOption from './prediction/countryOption'
 
 export default (props) => {
   const { options, index, name, onChange } = props
   const [menuOpen, setMenuOpen] = useState(null)
   const [selected, setSelected] = useState(null)
   const [typeValue, setTypeValue] = useState(null)
+
   let screenSize = window.outerWidth * 0.8
   const style = {
     width: `${screenSize > 350 ? 350 : screenSize}px`,
@@ -28,6 +30,7 @@ export default (props) => {
     setMenuOpen(!menuOpen)
   }
   const getSelected = (el) => {
+    console.log(el)
     const selected = options.filter((o) => o[index] === el.id)
     const selectedValue = selected.length && selected.pop()
     setSelected(selectedValue)
@@ -51,6 +54,7 @@ export default (props) => {
     document.addEventListener('keydown', handleKeyUp, false)
     return () => document.removeEventListener('keydown', handleKeyUp, false)
   }, [handleKeyUp])
+
   return (
     <div className="dropDown" style={style}>
       <div className="inputHolder" style={{ ...style, whiteSpace: 'nowrap' }}>
@@ -68,11 +72,11 @@ export default (props) => {
           {filtered &&
             filtered.map((o) => (
               <li
-                onClick={(e) => getSelected(e.target)}
                 id={o[index]}
                 key={o[index]}
+                onClick={(e) => getSelected(e.currentTarget)}
               >
-                {o[name]}
+                <CountryOption country={o} name={name} />
               </li>
             ))}
         </ul>

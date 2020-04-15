@@ -482,3 +482,16 @@ span:nth-child(1) {
     transform: rotate(360deg);
   }
 }
+
+.countryOption {
+}
+.countryOption img {
+  border: 0px;
+  margin-right: 8px;
+  vertical-align: bottom;
+}
+
+.countryOption span {
+  display: inline-block;
+  vertical-align: bottom;
+}
