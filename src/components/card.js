@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import useFlag from '../hooks/useFlag'
 import { options, capitalize } from '../utils/options'
 
-export default props => {
+export default (props) => {
   const { country, index } = props
-  const [flag, setFlag] = useState('#')
-  useEffect(() => {
-    fetch(
-      `https://restcountries.eu/rest/v2/name/${
-        country === 'UK' ? 'GB' : country
-      }?fields=name;flag`
-    )
-      .then(res => res.json())
-      .then(data => data[0] && setFlag(data[0].flag))
-  }, [country])
+  const { flag } = useFlag(country)
 
   return (
     <div className="card">
@@ -33,7 +25,7 @@ export default props => {
       </div>
       <div className="body">
         <ul>
-          {options.map(o => (
+          {options.map((o) => (
             <li key={o}>
               <span>{`${capitalize(o)}:`} </span>
               <span>{props[o]}</span>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { renderCustomizedLabel } from '../utils/chartUtils'
 import {
   Bar,
   Line,
@@ -10,25 +11,7 @@ import {
   Legend,
   LabelList,
 } from 'recharts'
-const renderCustomizedLabel = (props) => {
-  const { x, y, width, value } = props
-  const radius = 10
-  const offSet = 25
 
-  return (
-    <g>
-      <text
-        x={x + width + offSet}
-        y={y + radius}
-        fill="#ccc"
-        textAnchor="middle"
-        dominantBaseline="middle"
-      >
-        {value}
-      </text>
-    </g>
-  )
-}
 export default ({ data, sortedKey }) => {
   const calculated = 30 * data.length
   const graphHeight = calculated < 100 ? 100 : calculated
