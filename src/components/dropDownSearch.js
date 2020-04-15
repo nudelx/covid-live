@@ -30,7 +30,6 @@ export default (props) => {
     setMenuOpen(!menuOpen)
   }
   const getSelected = (el) => {
-    console.log(el)
     const selected = options.filter((o) => o[index] === el.id)
     const selectedValue = selected.length && selected.pop()
     setSelected(selectedValue)
