@@ -396,6 +396,7 @@ span:nth-child(1) {
 .dropDown .menu li {
   padding: 2px 5px;
   text-align: left;
+  border-bottom: 1px solid #c2d0d1;
 }
 
 .dropDown .menu li:hover {
@@ -481,4 +482,15 @@ span:nth-child(1) {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.countryOption img {
+  border: 0px;
+  margin-right: 8px;
+  vertical-align: bottom;
+}
+
+.countryOption span {
+  display: inline-block;
+  vertical-align: bottom;
 }
