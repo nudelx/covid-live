@@ -396,6 +396,7 @@ span:nth-child(1) {
 .dropDown .menu li {
   padding: 2px 5px;
   text-align: left;
+  border-bottom: 1px solid #c2d0d1;
 }
 
 .dropDown .menu li:hover {
