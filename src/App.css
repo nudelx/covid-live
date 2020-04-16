@@ -29,6 +29,8 @@
   margin: 20px;
   width: 300px;
   box-shadow: 1px 1px 14px 1px#000;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .card .title {
@@ -51,10 +53,16 @@
   color: #bbc9cc;
   font-size: 20px;
   display: inline-block;
-  text-align: center;
+  /* text-align: center; */
   margin-right: 20px;
   width: 100px;
 }
+
+.card .stats span:nth-child(2) {
+  text-align: left;
+  margin-left: 18px;
+}
+
 .location {
   width: 100%;
   position: absolute;

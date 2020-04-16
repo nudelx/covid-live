@@ -24,7 +24,7 @@ export default (props) => {
         </div>
       </div>
       <div className="body">
-        <ul>
+        <ul className="stats">
           {options.map((o) => (
             <li key={o}>
               <span>{`${capitalize(o)}:`} </span>
