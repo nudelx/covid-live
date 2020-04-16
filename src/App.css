@@ -433,7 +433,7 @@ span:nth-child(1) {
   margin: 60px 10px;
 }
 
-.chartList li {
+.chartList > li {
   margin-bottom: 50px;
   text-align: center;
 }
