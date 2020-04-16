@@ -29,11 +29,18 @@
   margin: 20px;
   width: 300px;
   box-shadow: 1px 1px 14px 1px#000;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .card .title {
   background-color: #072a34;
   padding: 5px;
+}
+
+.card .cardIndex {
+  font-size: calc(2px + 2vmin);
+  padding: 1px 0px 0px 10px;
 }
 
 .card ul {
@@ -46,10 +53,16 @@
   color: #bbc9cc;
   font-size: 20px;
   display: inline-block;
-  text-align: center;
+  /* text-align: center; */
   margin-right: 20px;
   width: 100px;
 }
+
+.card .stats span:nth-child(2) {
+  text-align: left;
+  margin-left: 18px;
+}
+
 .location {
   width: 100%;
   position: absolute;
@@ -125,8 +138,8 @@ span:nth-child(1) {
 }
 
 .flag {
-  margin-right: 10px;
-  vertical-align: baseline;
+  margin: 0px 10px 0px 10px;
+  vertical-align: middle;
 }
 .flagHolder {
   display: flex;
@@ -134,6 +147,12 @@ span:nth-child(1) {
   align-items: center;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.flagHolder .countryName {
+  vertical-align: middle;
+  font-size: 24px;
+  line-height: 25px;
 }
 
 .main-title {
