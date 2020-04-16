@@ -33,7 +33,7 @@ export default ({ data, sortedKey }) => {
         <XAxis type="number" verticalAlign="top" orientation={'top'} />
         <YAxis dataKey="country" type="category" interval={0} />
 
-        <Tooltip />
+        <Tooltip contentStyle={{ backgroundColor: '#fff', opacity: 0.8 }} />
         <Legend verticalAlign="top" align="right" />
         <Area
           type="monotone"

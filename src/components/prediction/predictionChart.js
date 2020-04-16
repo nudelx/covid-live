@@ -47,7 +47,13 @@ export default ({ data, title, dataKeys, country }) => {
           tick={{ fontSize: 10 }}
         />
         <YAxis interval={0} />
-        <Tooltip />
+        <Tooltip
+          contentStyle={{
+            backgroundColor: '#274a56',
+            opacity: 0.8,
+            border: '1px solid #000',
+          }}
+        />
         <CartesianGrid strokeDasharray="2 2" stroke={'#062d3d'} />
         {dataKeys.map((k) => {
           const color = colors[getRandomInt(colors.length)]
