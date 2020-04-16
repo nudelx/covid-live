@@ -71,6 +71,7 @@ export default () => {
         <li>
           <PredictionChart
             data={selectedPrediction}
+            country={selectedPrediction.country}
             dataKeys={dataKeysObj.cases}
             title={`${selectedPrediction.country} - ${dataKeysObj.cases.join(
               ' '
