@@ -1,5 +1,6 @@
 import React from 'react'
 import { colors, getRandomInt } from '../../utils/chartUtils'
+import useFlag from '../../hooks/useFlag'
 import {
   Area,
   XAxis,
@@ -10,15 +11,21 @@ import {
   Legend,
 } from 'recharts'
 
-export default ({ data, title, dataKeys }) => {
+export default ({ data, title, dataKeys, country }) => {
   if (!data) return null
   const graphHeight = 400
   let minGraphWidth = window.outerWidth * 0.9
   minGraphWidth = minGraphWidth < 500 ? 500 : minGraphWidth
+  const { flag } = useFlag(country)
 
   return (
     <div className="chartCenter chartShadow chatWidth">
-      <div className="chartTitle">{title}</div>
+      <div className="chartTitle">
+        <span>
+          <img width="50" height="30" src={flag} alt={country} />
+        </span>
+        <span>{`${title}`}</span>
+      </div>
       <AreaChart
         width={minGraphWidth}
         height={graphHeight}
