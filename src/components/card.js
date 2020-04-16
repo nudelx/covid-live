@@ -9,8 +9,9 @@ export default (props) => {
   return (
     <div className="card">
       <div className="title">
-        <div>{index}</div>
+        <div className="cardIndex">{index}</div>
         <div className="flagHolder">
+          <div className="countryName">{country}</div>
           <div
             className={`flag ${
               country.toLowerCase() === 'world' ? 'world' : ''
@@ -20,7 +21,6 @@ export default (props) => {
               <img width="30" height="25" alt={country} src={flag} />
             ) : null}
           </div>
-          <div>{country}</div>
         </div>
       </div>
       <div className="body">
