@@ -353,15 +353,18 @@ span:nth-child(1) {
 
 .dropHolder {
   margin: 30px 0px;
+  text-align: center;
 }
 
 .dropDown {
-  width: 90%;
-  display: block;
+  display: inline-block;
 }
 
 .dropDown .inputHolder {
   position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
 }
 
 .dropDown .input {
@@ -389,7 +392,6 @@ span:nth-child(1) {
   height: 36px;
   color: #222;
   text-align: center;
-  left: -40px;
   vertical-align: bottom;
   line-height: 32px;
 }
@@ -399,8 +401,9 @@ span:nth-child(1) {
   box-shadow: 1px 1px 14px 1px#000;
   position: absolute;
   outline: none;
-  min-width: 400px;
   font-size: 20px;
+  max-height: 50vh;
+  overflow-y: scroll;
 }
 
 .dropDown .menu ul {

@@ -7,13 +7,9 @@ export default (props) => {
   const [selected, setSelected] = useState(null)
   const [typeValue, setTypeValue] = useState(null)
 
-  let screenSize = window.outerWidth * 0.8
-  const style = {
-    width: `${screenSize > 350 ? 350 : screenSize}px`,
-    textAlign: 'center',
-    display: 'inline-block',
-  }
-  const inputStyle = { width: '100%' }
+  let screenSize = window.outerWidth * 0.85
+  let calcSize = screenSize > 600 ? 600 : screenSize
+
   const placeholder = 'Select a Country or Start Typing ...'
 
   const handleKeyUp = useCallback(
@@ -55,18 +51,20 @@ export default (props) => {
   }, [handleKeyUp])
 
   return (
-    <div className="dropDown" style={style}>
-      <div className="inputHolder" style={{ ...style, whiteSpace: 'nowrap' }}>
+    <div className="dropDown" style={{ width: calcSize }}>
+      <div className="inputHolder" style={{ whiteSpace: 'nowrap' }}>
         <input
-          style={inputStyle}
           placeholder={placeholder}
           className="input"
           onChange={typeIn}
           value={(selected && selected[name]) || typeValue || ''}
         />
-        <i className="button" onClick={openMenu}></i>
+        <i className="button" onClick={openMenu} style={{ left: '-60px' }}></i>
       </div>
-      <div className="menu" style={{ display: menuOpen ? 'block' : 'none' }}>
+      <div
+        className="menu"
+        style={{ display: menuOpen ? 'block' : 'none', width: calcSize * 0.96 }}
+      >
         <ul>
           {filtered &&
             filtered.map((o) => (
