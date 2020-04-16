@@ -22,8 +22,12 @@ export default () => {
   }, [])
 
   useEffect(() => {
-    const resizeListener = () => {
-      window.timer = setTimeout(() => setReload(reload + 1), 500)
+    window.resizeEventMobile = document.body.clientWidth
+    const resizeListener = (e) => {
+      if (window.resizeEventMobile !== document.body.clientWidth) {
+        window.timer = setTimeout(() => setReload(reload + 1), 500)
+        window.resizeEventMobile = document.body.clientWidth
+      }
     }
     window.addEventListener('resize', resizeListener)
     return () => {
