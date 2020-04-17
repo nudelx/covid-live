@@ -95,7 +95,6 @@
 
 .locationList li {
   white-space: nowrap;
-  overflow: scroll;
   padding: 2px;
   display: inline-block;
   border-right: 1px solid #ccc;
@@ -427,7 +426,7 @@ span:nth-child(1) {
 
 .predictionBoard {
   text-align: center;
-  width: 100vw;
+  width: 98vw;
 }
 
 .chartList {
@@ -464,7 +463,7 @@ span:nth-child(1) {
 .chatWidth {
   width: 95vw;
   padding: 20px 0px;
-  overflow: scroll;
+  overflow: auto;
   font-size: 12px;
   display: inline-block;
 }
