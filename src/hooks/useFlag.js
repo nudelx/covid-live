@@ -30,12 +30,12 @@ export default (country) => {
       )}?fields=name;flag`
     )
       .then((res) => res.json())
+      .then((data) => flagTunning(data, country))
       .then(
         (res) =>
           (res[0] && localStorage.setItem(country, JSON.stringify(res[0]))) ||
           res
       )
-      .then((data) => flagTunning(data, country))
       .then((data) => data[0] && setFlag(data[0].flag))
   }, [country])
   return {
