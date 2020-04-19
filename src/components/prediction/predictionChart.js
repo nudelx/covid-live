@@ -44,6 +44,7 @@ export default ({ data, title, dataKeys, country }) => {
           angle={60}
           padding={{ right: 10 }}
           dy={30}
+          dx={20}
           tick={{ fontSize: 10 }}
         />
         <YAxis interval={0} />
