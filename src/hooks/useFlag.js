@@ -11,13 +11,12 @@ const flagTunning = (data, country) => {
 }
 
 const countryTunning = (country) => {
+  const c = country.toLowerCase()
   const mapping = {
     uk: () => 'GB',
     czechia: () => 'czech',
   }
-  return mapping[country.toLowerCase()]
-    ? mapping[country.toLowerCase()]()
-    : country
+  return mapping[c] ? mapping[c]() : country
 }
 
 export default (country) => {
