@@ -4,17 +4,21 @@ export const normalizeData = (data) => {
       confidence: c.confidence,
       country: c.country,
       update: c.update,
+      countryColors: c.colors,
     }
 
-    obj.data = c.growth.reduce(
+    const historyLength = c.growth.length -1;
+    obj.data = c.trend.reduce(
       (all, value, index) => [
         ...all,
         {
-          growth: value,
-          trend: c.trend[index],
+          trend: value,
+          growth: c.growth[index],
           date: c.dates[index],
           cases: c.cases[index],
+          casesP: index < historyLength ? null : c.casesP[index],
           daily: c.daily[index],
+          dailyP: index < historyLength ? null : c.dailyP[index],
         },
       ],
       []
@@ -25,7 +29,7 @@ export const normalizeData = (data) => {
 }
 
 export const dataKeysObj = {
-  growth: ['growth', 'trend'],
-  daily: ['daily'],
-  cases: ['cases'],
+  growth: ['trend', 'growth'],
+  daily: ['dailyP', 'daily'],
+  cases: ['casesP', 'cases'],
 }
