@@ -17,6 +17,8 @@ export default ({ data, title, dataKeys, country }) => {
   let minGraphWidth = window.outerWidth * 0.9
   minGraphWidth = minGraphWidth < 500 ? 500 : minGraphWidth
   const { flag } = useFlag(country)
+  const countryColors = data.countryColors;
+  let colorIndex = 0;
 
   return (
     <div className="chartCenter chartShadow chatWidth">
@@ -57,14 +59,15 @@ export default ({ data, title, dataKeys, country }) => {
         />
         <CartesianGrid strokeDasharray="2 2" stroke={'#062d3d'} />
         {dataKeys.map((k) => {
-          const color = colors[getRandomInt(colors.length)]
+          const color = dataKeys.length > countryColors.length
+              ? colors[getRandomInt(colors.length)]
+              : countryColors[colorIndex++]
           return (
             <Area
               key={k}
               fillOpacity="0.3"
               type="monotone"
               dataKey={k}
-              stackId="1"
               stroke={color}
               fill={color}
             />

@@ -15,7 +15,7 @@ export default () => {
     fbApp
       .database()
       .ref()
-      .child('data/prediction')
+      .child('dataV2/prediction')
       .on('value', (snap) => {
         setPrediction(normalizeData(snap.val()))
       })
@@ -57,9 +57,7 @@ export default () => {
             data={selectedPrediction}
             dataKeys={dataKeysObj.growth}
             country={selectedPrediction.country}
-            title={`${selectedPrediction.country} - ${dataKeysObj.growth.join(
-              ' '
-            )} Prediction`}
+            title={`${selectedPrediction.country} - Growth Rate Prediction`}
           />
         </li>
         <li>
@@ -67,9 +65,7 @@ export default () => {
             data={selectedPrediction}
             country={selectedPrediction.country}
             dataKeys={dataKeysObj.daily}
-            title={`${selectedPrediction.country} - ${dataKeysObj.daily.join(
-              ' '
-            )}`}
+            title={`${selectedPrediction.country} - Daily Prediction`}
           />
         </li>
         <li>
@@ -77,9 +73,7 @@ export default () => {
             data={selectedPrediction}
             country={selectedPrediction.country}
             dataKeys={dataKeysObj.cases}
-            title={`${selectedPrediction.country} - ${dataKeysObj.cases.join(
-              ' '
-            )}`}
+            title={`${selectedPrediction.country} - Cases Prediction`}
           />
         </li>
       </ul>
