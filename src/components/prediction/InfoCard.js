@@ -3,7 +3,6 @@ import Calendar from '../calendar'
 import ConfidenceChart from '../prediction/confidenceChart'
 
 export default ({ update, confidence }) => {
-  console.log(update)
   const [y, m, d] = update.split('-')
   return (
     <div className="info chartShadow">
