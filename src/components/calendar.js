@@ -1,38 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import useCalendar from '../hooks/useCalendar'
 
 export default ({ dayName, dayNumber, month }) => {
-  const [date, setDate] = useState(null)
-  useEffect(() => {
-    const date = new Date()
-    var months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ]
-    var days = [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-    ]
-    setDate({
-      dayNumber: dayNumber || date.getDate(),
-      dayName: dayName || days[date.getDay()],
-      month: month || months[date.getMonth()],
-    })
-  }, [dayName, dayNumber, month])
+  const { date } = useCalendar({ dayName, dayNumber, month })
   if (!date) return null
   return (
     <div className="calendar">
