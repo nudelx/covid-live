@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default ({ dayNumber, dayName, month }) => {
+export default ({ dayNumber, dayName, month, year }) => {
   const [date, setDate] = useState(null)
   useEffect(() => {
     const date = new Date()
@@ -29,10 +29,11 @@ export default ({ dayNumber, dayName, month }) => {
     ]
     setDate({
       dayNumber: dayNumber || date.getDate(),
-      dayName: dayName || days[date.getDay()],
-      month: month || months[date.getMonth()],
+      dayName: dayName || days[dayNumber] || days[date.getDay()],
+      month: months[month - 1] || months[date.getMonth()],
+      year: year || date.getFullYear(),
     })
-  }, [dayName, dayNumber, month])
+  }, [dayName, dayNumber, month, year])
 
   return {
     date,

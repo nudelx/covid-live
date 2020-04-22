@@ -442,6 +442,7 @@ span:nth-child(1) {
 
 .chartTitle {
   font-size: calc(12px + 2vmin);
+  color: #abb9bb;
 }
 
 .chartTitle span:nth-child(1) {
@@ -553,4 +554,24 @@ span:nth-child(1) {
 .calendar .month {
   font-size: 16px;
   font-weight: normal;
+}
+
+.info {
+  width: 95vw;
+  line-height: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.info > div {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.confidenceTitle {
+  line-height: 18px;
+  height: 18px;
+  color: #abb9bb;
+  font-size: 16px;
 }

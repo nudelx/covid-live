@@ -9,7 +9,7 @@ export default ({ dayName, dayNumber, month }) => {
       <div className="number">{date.dayNumber}</div>
       <div className="holder">
         <div className="day">{date.dayName}</div>
-        <div className="month">{date.month}</div>
+        <div className="month">{`${date.month} ${date.year}`}</div>
       </div>
     </div>
   )

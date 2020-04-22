@@ -9,7 +9,6 @@ import Tabs from './tabs'
 import Board from './board'
 import Spinner from './spinner'
 import { tabNames } from '../utils/tabNames'
-import Calendar from './calendar'
 
 export default () => {
   const { tab, setTabs, tabs } = useTabs(tabNames.live)
@@ -30,7 +29,6 @@ export default () => {
     <div>
       <Header>
         <Title />
-        <Calendar />
         <Tabs tab={tab} setTabs={setTabs} tabs={tabs} />
       </Header>
       <Board
