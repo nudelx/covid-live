@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ConfidenceChart />
+        <ConfidenceChart value={77} />
         <CovidBoard />
       </header>
     </div>

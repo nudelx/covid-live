@@ -34,7 +34,7 @@ export const dataKeysObj = {
   cases: ['casesP', 'cases'],
 }
 
-export const COLORS = ['#eb4d4b', '#f9ca24', '#6ab04c'] // [0-30] - red  [31-70] - yellow  [71-100]- green
+export const COLORS = ['#eb4d4b', '#f9ca24', '#6ab04c']
 export const EMPTY_COLOR = '#072f3f'
 export const getColorIndex = (value) => {
   if (value <= 75) return 0
