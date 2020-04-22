@@ -520,3 +520,33 @@ span:nth-child(1) {
   display: inline-block;
   vertical-align: bottom;
 }
+
+.calendar {
+  white-space: nowrap;
+  color: #abb9bb;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calendar .number {
+  padding-right: 2px;
+  font-size: 44px;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.calendar .holder {
+  padding-left: 2px;
+  font-size: 20px;
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.calendar .day {
+  font-weight: bold;
+}
+.calendar .month {
+  font-size: 18px;
+  font-weight: normal;
+}
