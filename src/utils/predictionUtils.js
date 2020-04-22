@@ -37,7 +37,7 @@ export const dataKeysObj = {
 export const COLORS = ['#eb4d4b', '#f9ca24', '#6ab04c'] // [0-30] - red  [31-70] - yellow  [71-100]- green
 export const EMPTY_COLOR = '#072f3f'
 export const getColorIndex = (value) => {
-  if (value <= 30) return 0
-  if (value > 30 && value <= 70) return 1
-  if (value > 70) return 2
+  if (value <= 75) return 0
+  if (value > 75 && value <= 90) return 1
+  if (value > 90) return 2
 }

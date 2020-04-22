@@ -2,7 +2,7 @@ import React from 'react'
 import { PieChart, Pie, Cell } from 'recharts'
 import { COLORS, EMPTY_COLOR, getColorIndex } from '../../utils/predictionUtils'
 
-export default ({ value = 71 }) => {
+export default ({ value = 89 }) => {
   const _value = value > 100 ? 100 : value
   const data = [
     { name: 'value', value: _value },
@@ -11,15 +11,16 @@ export default ({ value = 71 }) => {
   const color = getColorIndex(_value)
   const customLabel = ({ percent, index }) => {
     if (index === 1) return null
+    const txt = `${(percent * 100).toFixed(0)}%`
     return (
       <text
-        x={140}
+        x={150 - (txt.length / 2) * 8}
         y={90}
         fill="white"
-        textAnchor={'start'}
+        textAnchor={'center'}
         dominantBaseline="central"
       >
-        {`${(percent * 100).toFixed(0)}%`}
+        {txt}
       </text>
     )
   }
