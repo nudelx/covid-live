@@ -7,7 +7,7 @@ export const normalizeData = (data) => {
       countryColors: c.colors,
     }
 
-    const historyLength = c.growth.length -1;
+    const historyLength = c.growth.length - 1
     obj.data = c.trend.reduce(
       (all, value, index) => [
         ...all,
@@ -32,4 +32,12 @@ export const dataKeysObj = {
   growth: ['trend', 'growth'],
   daily: ['dailyP', 'daily'],
   cases: ['casesP', 'cases'],
+}
+
+export const COLORS = ['#eb4d4b', '#f9ca24', '#6ab04c']
+export const EMPTY_COLOR = '#072f3f'
+export const getColorIndex = (value) => {
+  if (value <= 75) return 0
+  if (value > 75 && value <= 90) return 1
+  if (value > 90) return 2
 }
