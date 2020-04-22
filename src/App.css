@@ -442,6 +442,7 @@ span:nth-child(1) {
 
 .chartTitle {
   font-size: calc(12px + 2vmin);
+  color: #abb9bb;
 }
 
 .chartTitle span:nth-child(1) {
@@ -519,4 +520,58 @@ span:nth-child(1) {
 .countryOption span {
   display: inline-block;
   vertical-align: bottom;
+}
+
+.calendar {
+  white-space: nowrap;
+  color: #abb9bb;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calendar .number {
+  padding-right: 2px;
+  font-size: 48px;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 40px;
+}
+.calendar .holder {
+  line-height: 20px;
+  height: auto;
+  padding-left: 2px;
+  font-size: 20px;
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.calendar .day {
+  font-weight: bold;
+  font-size: 16px;
+}
+.calendar .month {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.info {
+  width: 95vw;
+  line-height: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.info > div {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 2vw;
+}
+
+.confidenceTitle {
+  line-height: 18px;
+  height: 18px;
+  color: #abb9bb;
+  font-size: 16px;
 }

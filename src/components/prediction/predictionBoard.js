@@ -5,6 +5,7 @@ import DropDown from '../dropDownSearch'
 import PredictionChart from './predictionChart'
 import Spinner from '../spinner'
 import { normalizeData, dataKeysObj } from '../../utils/predictionUtils'
+import InfoCard from './InfoCard'
 
 export default () => {
   const [prediction, setPrediction] = useState(null)
@@ -41,6 +42,7 @@ export default () => {
     ? prediction.filter((i) => i.country === selected.country)[0]
     : prediction[0]
 
+  const { confidence, update } = selectedPrediction
   return (
     <div className="predictionBoard" key={reload}>
       <div className="dropHolder">
@@ -52,6 +54,9 @@ export default () => {
         />
       </div>
       <ul className="chartList">
+        <li>
+          <InfoCard confidence={confidence} update={update} />
+        </li>
         <li>
           <PredictionChart
             data={selectedPrediction}
