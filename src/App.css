@@ -534,11 +534,9 @@ span:nth-child(1) {
   display: inline-block;
   vertical-align: middle;
   font-weight: bold;
-  /* border: 1px solid green; */
   line-height: 40px;
 }
 .calendar .holder {
-  /* border: 1px solid red; */
   line-height: 20px;
   height: auto;
   padding-left: 2px;
