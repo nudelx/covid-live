@@ -530,12 +530,17 @@ span:nth-child(1) {
 
 .calendar .number {
   padding-right: 2px;
-  font-size: 44px;
+  font-size: 48px;
   display: inline-block;
   vertical-align: middle;
   font-weight: bold;
+  /* border: 1px solid green; */
+  line-height: 40px;
 }
 .calendar .holder {
+  /* border: 1px solid red; */
+  line-height: 20px;
+  height: auto;
   padding-left: 2px;
   font-size: 20px;
   text-align: left;
@@ -545,8 +550,9 @@ span:nth-child(1) {
 
 .calendar .day {
   font-weight: bold;
+  font-size: 16px;
 }
 .calendar .month {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: normal;
 }
