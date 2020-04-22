@@ -566,7 +566,7 @@ span:nth-child(1) {
 .info > div {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 10px;
+  margin-right: 2vw;
 }
 
 .confidenceTitle {
