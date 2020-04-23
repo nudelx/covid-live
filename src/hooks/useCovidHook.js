@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import useTimer from './useTimer'
 import { filterCards, handleError } from '../utils/utils'
+import API from '../utils/api'
 
 export default () => {
   const [cards, setCards] = useState([])
@@ -15,7 +16,7 @@ export default () => {
   const getData = useCallback(
     () =>
       setLoading(true) ||
-      fetch('https://coronavirus-19-api.herokuapp.com/countries/')
+      fetch(API.covidAPI)
         .then((res) => res.json())
         .then(filterCards(setWorld))
         .then(setCards)

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import API from '../utils/api'
 
 const flagTunning = (data, country) => {
   const mapping = {
@@ -26,11 +27,7 @@ export default (country) => {
     if (cached) {
       return setFlag(JSON.parse(cached).flag)
     }
-    fetch(
-      `https://restcountries.eu/rest/v2/name/${countryTunning(
-        country
-      )}?fields=name;flag`
-    )
+    fetch(`${API.flagAPI}${countryTunning(country)}?fields=name;flag`)
       .then((res) => res.json())
       .then((data) => flagTunning(data, country))
       .then(
