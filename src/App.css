@@ -40,9 +40,37 @@
 
 .card .cardIndex {
   font-size: calc(2px + 2vmin);
-  padding: 1px 0px 0px 10px;
+  padding: 0px 0px 10px;
+}
+.stats {
+  font-size: 20px;
+  vertical-align: middle;
+  padding: 1px 10px;
+}
+.s-red {
+  color: #b60420;
+}
+.s-green {
+  color: #289e00;
 }
 
+.arrow-up {
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #b60420;
+}
+
+.arrow-down {
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #289e00;
+}
 .card ul {
   font-size: 22px;
   text-align: left;

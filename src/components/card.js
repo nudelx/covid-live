@@ -1,16 +1,19 @@
 import React from 'react'
 import useFlag from '../hooks/useFlag'
 import { options, capitalize } from '../utils/options'
+import Stats from './stats'
 
 export default (props) => {
-  const { country, index } = props
-  const { flag } = useFlag(country)
-
+  const { country, index, countryInfo, stats } = props
+  const flag = countryInfo ? countryInfo.flag : useFlag(country).flag
   return (
     <div className="card">
       <div className="title">
-        <div className="cardIndex">{index}</div>
+        <div>
+          <div className="cardIndex">{index}</div>
+        </div>
         <div className="flagHolder">
+          <Stats stats={stats} />
           <div className="countryName">{country}</div>
           <div
             className={`flag ${

@@ -13,6 +13,7 @@ export default ({
   setSort,
   sortedCards,
   error,
+  yesterday,
 }) => {
   return (
     <div className="board">
@@ -25,7 +26,7 @@ export default ({
         />
       )}
       {error && <Error error={error} />}
-      {tabViews[tab]({ sortedCards, sort })}
+      {tabViews[tab]({ sortedCards, sort, yesterday })}
     </div>
   )
 }

@@ -24,7 +24,6 @@ export default () => {
   } = useCovidHook()
 
   if (loading) return <Spinner />
-
   return (
     <div>
       <Header>

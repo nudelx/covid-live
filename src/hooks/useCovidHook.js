@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import useTimer from './useTimer'
 import { filterCards, handleError } from '../utils/utils'
 import API from '../utils/api'
+import useYesterday from './useYesterday'
 
 export default () => {
   const [cards, setCards] = useState([])
@@ -12,6 +13,7 @@ export default () => {
   const timer = useTimer(3600000) // 1 hours
   const [error, setError] = useState(null)
   const [world, setWorld] = useState(null)
+  const { yesterday } = useYesterday()
 
   const getData = useCallback(
     () =>
@@ -31,7 +33,16 @@ export default () => {
       ? cards.filter((item) => item.country.match(new RegExp(search, 'i')))
       : cards
 
-    return cardFiltered.sort(function(a, b) {
+    const withStats = yesterday
+      ? cardFiltered.map(function(item) {
+          const a = yesterday[item.country][sort]
+          const b = item[sort]
+          item.stats = a > 0 ? ((b - a) / a) * 100 : 0
+          return { ...item }
+        })
+      : cardFiltered
+
+    return withStats.sort(function(a, b) {
       if (a[sort] > b[sort]) return -1
       if (b[sort] > a[sort]) return 1
       return 0
