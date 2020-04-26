@@ -26,7 +26,7 @@ export default ({
         />
       )}
       {error && <Error error={error} />}
-      {tabViews[tab]({ sortedCards, sort, yesterday })}
+      {tabViews[tab]({ sortedCards, sort })}
     </div>
   )
 }
