@@ -469,7 +469,7 @@ span:nth-child(1) {
 
 .chartTitle {
   font-size: calc(12px + 2vmin);
-  color: #abb9bb;
+  /* color: #abb9bb; */
 }
 
 .chartTitle span:nth-child(1) {
@@ -551,7 +551,7 @@ span:nth-child(1) {
 
 .calendar {
   white-space: nowrap;
-  color: #abb9bb;
+  /* color: #abb9bb; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -599,7 +599,7 @@ span:nth-child(1) {
 .confidenceTitle {
   line-height: 18px;
   height: 18px;
-  color: #abb9bb;
+  /* color: #abb9bb; */
   font-size: 16px;
 }
 
@@ -655,4 +655,20 @@ span:nth-child(1) {
 
 .light .card .title {
   background-color: #c3c4c5;
+}
+
+.light .dropDown .input {
+  background-color: #c2c3c7;
+  border: 1px solid #a0a0a3;
+}
+.light .dropDown .button {
+  background-color: #c2c3c7;
+  border-top: 1px solid #a0a0a3;
+  border-bottom: 1px solid #a0a0a3;
+  border-right: 1px solid #a0a0a3;
+  height: 34px;
+}
+
+.light .dropDown .menu ul {
+  background-color: #c2c3c7;
 }
