@@ -35,7 +35,8 @@ export default () => {
 
     const withStats = yesterday
       ? cardFiltered.map(function(item) {
-          const a = yesterday[item.country][sort]
+          const old = yesterday[item.country] || null
+          const a = old ? yesterday[item.country][sort] : 0
           const b = item[sort]
           item.stats = a > 0 ? ((b - a) / a) * 100 : 0
           return { ...item }
