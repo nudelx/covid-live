@@ -7,8 +7,8 @@ localStorageRefresh('bee66946449a')
 
 function App() {
   return (
-    <div className="App light">
-      <header className="App-header">
+    <div className="App">
+      <header className="App-header light">
         <CovidBoard />
       </header>
     </div>

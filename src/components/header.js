@@ -1,5 +1,5 @@
 import React from 'react'
 
 export default ({ children }) => {
-  return <div className="header light">{children}</div>
+  return <div className="header">{children}</div>
 }

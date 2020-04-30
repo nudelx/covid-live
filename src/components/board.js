@@ -16,7 +16,7 @@ export default ({
   yesterday,
 }) => {
   return (
-    <div className="board light">
+    <div className="board">
       {tab !== tabNames.prediction && (
         <SearchSort
           search={search}

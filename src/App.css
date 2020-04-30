@@ -1,3 +1,8 @@
+html {
+  color: #bbc9cc;
+  background-color: #041d26;
+}
+
 .App {
   text-align: center;
 }
@@ -14,14 +19,12 @@
 }
 
 .App-header {
-  background-color: #041d26;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .card {
@@ -78,7 +81,6 @@
 }
 
 .card span {
-  color: #bbc9cc;
   font-size: 20px;
   display: inline-block;
   /* text-align: center; */
@@ -100,7 +102,7 @@
   text-align: center;
   font-size: 12px;
   text-align: left;
-  color: #adbabc;
+  /* color: #adbabc; */
 }
 
 .locationTitle {
@@ -146,7 +148,6 @@ span:nth-child(1) {
 }
 
 .title {
-  color: #adbabc;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -194,15 +195,6 @@ span:nth-child(1) {
 .header a:hover {
   text-decoration: none;
   color: #adbabc;
-}
-
-.light.header a,
-.light.header a:visited,
-.light.header a:active,
-.light.header a:link,
-.light.header a:hover {
-  text-decoration: none;
-  color: #222;
 }
 
 .tools {
@@ -621,7 +613,46 @@ span:nth-child(1) {
   vertical-align: sub;
 }
 
+/** light theme **/
+
 .light {
-  background-color: #ddd;
+  color: #2f3542;
+  background-color: #f1f2f6;
+}
+
+.light .board {
+  border-top: 1px solid #b4b5b8;
+}
+
+.light .tabs li.active {
+  border-top: 1px solid #b4b5b8;
+  border-left: 1px solid #b4b5b8;
+  border-right: 1px solid #b4b5b8;
+  border-bottom: 5px solid #f1f2f6;
+  color: #2f3542;
+}
+
+.light .tabs li {
+  border-top: 1px solid #b4b5b8;
+  border-left: 1px solid #b4b5b8;
+  border-right: 1px solid #b4b5b8;
+  color: #2f3542;
+}
+
+.light .tools input {
+  background-color: #c2c3c7;
+  border: 1px solid #a0a0a3;
+}
+
+.light .header a,
+.light .header a:visited,
+.light .header a:active,
+.light .header a:link,
+.light .header a:hover {
+  text-decoration: none;
   color: #222;
+}
+
+.light .card .title {
+  background-color: #c3c4c5;
 }
