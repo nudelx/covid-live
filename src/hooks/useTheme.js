@@ -1,4 +1,5 @@
-import { createContext, useContext } from 'react'
+import { useState } from 'react'
 export default () => {
-  return useContext(createContext('dark'))
+  const [theme, setTheme] = useState('dark')
+  return { theme, setTheme }
 }
