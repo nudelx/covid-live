@@ -155,13 +155,11 @@ span:nth-child(1) {
 
 .sub-title {
   font-size: 14px;
-  color: #adbabc;
 }
 
 .sub-title-2 {
   padding: 5px;
   font-size: 10px;
-  color: #adbabc;
 }
 
 .flag {
@@ -198,6 +196,15 @@ span:nth-child(1) {
   color: #adbabc;
 }
 
+.light.header a,
+.light.header a:visited,
+.light.header a:active,
+.light.header a:link,
+.light.header a:hover {
+  text-decoration: none;
+  color: #222;
+}
+
 .tools {
   display: flex;
   justify-content: center;
@@ -211,7 +218,7 @@ span:nth-child(1) {
   cursor: pointer;
   font-size: 16px;
   margin-right: 10px;
-  color: #adbabc;
+  /* color: #adbabc; */
 }
 
 .tools input {
@@ -612,4 +619,9 @@ span:nth-child(1) {
   display: inline-block;
   cursor: pointer;
   vertical-align: sub;
+}
+
+.light {
+  background-color: #ddd;
+  color: #222;
 }
