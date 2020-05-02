@@ -3,7 +3,7 @@ import './App.css'
 import CovidBoard from './components/covidBoard'
 import { localStorageRefresh } from './utils/localStorageToken'
 import useTheme from './hooks/useTheme'
-
+import ScrollToTop from './components/scrollToTop'
 localStorageRefresh('bee66946449a')
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       <header className={`App-header ${theme}`}>
         <CovidBoard />
       </header>
+      <ScrollToTop />
     </div>
   )
 }
