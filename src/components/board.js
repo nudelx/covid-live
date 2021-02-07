@@ -13,7 +13,6 @@ export default ({
   setSort,
   sortedCards,
   error,
-  yesterday,
 }) => {
   return (
     <div className="board">
