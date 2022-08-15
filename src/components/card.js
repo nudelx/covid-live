@@ -4,8 +4,9 @@ import { options, capitalize } from '../utils/options'
 import Stats from './stats'
 
 export default (props) => {
-  const { country, index, countryInfo, stats } = props
-  const flag = countryInfo ? countryInfo.flag : useFlag(country).flag
+  const { country, index, stats } = props
+
+  const { flag } = useFlag(country) 
   return (
     <div className="card">
       <div className="title">
