@@ -18,7 +18,7 @@ export default () => {
   const getData = useCallback(
     () =>
       setLoading(true) ||
-      fetch(API.covidAPI)
+      fetch(API.covidAPI_2)
         .then((res) => res.json())
         .then(filterCards(setWorld))
         .then(setCards)
